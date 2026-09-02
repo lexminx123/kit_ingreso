@@ -1,0 +1,48 @@
+# Archivos temporales y de sistema
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+~$*
+._*
+
+# Directorios de preview / cache
+_pdf_preview/
+_verify/
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos de trabajo temporales de Office
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Entorno virtual
+venv/
+.venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+dev.log
+
+# Archivos compilados
+*.class
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local

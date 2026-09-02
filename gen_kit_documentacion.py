@@ -284,9 +284,9 @@ def build_document():
     for i in range(4):
         stats.columns[i].width = Cm(4)
     stats_data = [
-        ("11", "scripts Python"),
-        ("~7,950", "líneas de código"),
-        ("39", "formatos generados"),
+        ("13", "scripts Python"),
+        ("~9,400", "líneas de código"),
+        ("42", "formatos generados"),
         ("100%", "kit completo"),
     ]
     for ci, (num, lbl) in enumerate(stats_data):
@@ -344,6 +344,10 @@ def build_document():
          "958 líneas", "08_POLITICAS_INTERNAS/ (4 archivos)"),
         ("11", "gen_checklist_v3.py", "Checklist Maestro de Ingreso (A4 horizontal)",
          "465 líneas", "00_Checklist_Maestro_Ingreso_Trabajador.docx"),
+        ("12", "gen_discriminacion_remuneracion.py", "Política de Remuneraciones USD 250 discriminados en 5 conceptos",
+         "479 líneas", "Discriminacion_Remuneraciones.docx (1 archivo)"),
+        ("13", "gen_honorarios_profesionales.py", "Concepto jurídico + 2 Contratos de Honorarios (Vet y Groomer)",
+         "929 líneas", "Concepto_Honorarios_*.docx + 2 Contratos de Honorarios (3 archivos)"),
     ]
 
     # Tabla índice
@@ -413,20 +417,22 @@ def build_document():
 
     add_para(doc, "Cómo regenerar todos los formatos", size=12, bold=True, color=TEAL_DARK, space_before=4, space_after=3)
     add_para(doc,
-        "1. Copia los 11 scripts .py a una carpeta de trabajo (por ejemplo /home/z/my-project/output/).\n"
+        "1. Copia los 13 scripts .py a una carpeta de trabajo (por ejemplo /home/z/my-project/output/).\n"
         "2. Ejecuta cada script en orden:\n"
-        "   python3 _common.py                  # (no genera nada, es módulo)\n"
-        "   python3 gen_solicitud_v3.py          # genera 1 documento\n"
-        "   python3 gen_contratos.py            # genera 7 contratos\n"
-        "   python3 gen_funciones_por_cargo.py   # genera 7 descripciones de cargo\n"
-        "   python3 gen_prestaciones.py         # genera 2 documentos\n"
-        "   python3 gen_riesgos_por_rol.py       # genera 5 notificaciones de riesgos\n"
-        "   python3 gen_protocolos_vet.py        # genera 4 protocolos veterinarios\n"
-        "   python3 gen_documentos_finales_v3.py # genera 5 documentos finales\n"
-        "   python3 gen_autorizaciones.py       # genera 3 autorizaciones\n"
-        "   python3 gen_politicas.py             # genera 4 políticas internas\n"
-        "   python3 gen_checklist_v3.py          # genera 1 checklist maestro\n"
-        "3. Total: 39 documentos .docx generados en las carpetas correspondientes.",
+        "   python3 _common.py                          # (no genera nada, es módulo)\n"
+        "   python3 gen_solicitud_v3.py                  # genera 1 documento\n"
+        "   python3 gen_contratos.py                     # genera 7 contratos\n"
+        "   python3 gen_funciones_por_cargo.py            # genera 7 descripciones de cargo\n"
+        "   python3 gen_prestaciones.py                   # genera 2 documentos\n"
+        "   python3 gen_riesgos_por_rol.py                # genera 5 notificaciones de riesgos\n"
+        "   python3 gen_protocolos_vet.py                 # genera 4 protocolos veterinarios\n"
+        "   python3 gen_documentos_finales_v3.py          # genera 5 documentos finales\n"
+        "   python3 gen_autorizaciones.py                 # genera 3 autorizaciones\n"
+        "   python3 gen_politicas.py                      # genera 4 políticas internas\n"
+        "   python3 gen_checklist_v3.py                   # genera 1 checklist maestro\n"
+        "   python3 gen_discriminacion_remuneracion.py    # genera 1 política salarial\n"
+        "   python3 gen_honorarios_profesionales.py       # genera concepto + 2 contratos honorarios\n"
+        "3. Total: 42 documentos .docx generados en las carpetas correspondientes.",
         size=10, space_after=4)
 
     add_para(doc, "Personalización", size=12, bold=True, color=TEAL_DARK, space_before=6, space_after=3)
@@ -471,7 +477,7 @@ def build_document():
     add_hr(sep, color="0F766E", sz="10")
 
     add_para(doc,
-        "A continuación se incluyen los 11 scripts Python completos en orden de dependencia. "
+        "A continuación se incluyen los 13 scripts Python completos en orden de dependencia. "
         "El primer script (_common.py) es módulo de utilidades compartidas y debe copiarse junto "
         "con los demás en la misma carpeta para que funcionen las importaciones.",
         size=10, italic=True, color=GRAY_TEXT, space_after=10)
@@ -489,6 +495,8 @@ def build_document():
         "gen_autorizaciones.py",
         "gen_politicas.py",
         "gen_checklist_v3.py",
+        "gen_discriminacion_remuneracion.py",
+        "gen_honorarios_profesionales.py",
     ]
 
     section_num = 0

@@ -97,6 +97,7 @@ ROLES = [
             "Rendir informe mensual de gestión ante la Vicepresidencia.",
         ],
         "incluye_historias": False,
+        "equipos_propios": None,
     },
     {
         "code": "02b",
@@ -132,6 +133,7 @@ ROLES = [
             "Reportar a Gerencia los indicadores de atención clínica y egresos hospitalarios.",
         ],
         "incluye_historias": False,
+        "equipos_propios": None,
     },
     {
         "code": "02c",
@@ -167,6 +169,7 @@ ROLES = [
             "Cumplir y hacer cumplir las normas LOPCYMAT aplicables al área de tienda (ergonomía, manipulación manual de cargas).",
         ],
         "incluye_historias": False,
+        "equipos_propios": None,
     },
     {
         "code": "02d",
@@ -204,6 +207,7 @@ ROLES = [
             "Cumplir el Código de Ética del Colegio de Médicos Veterinarios de Venezuela.",
         ],
         "incluye_historias": True,
+        "equipos_propios": "estetoscopio",
     },
     {
         "code": "02e",
@@ -240,6 +244,7 @@ ROLES = [
             "Atender y orientar a los dueños o responsables de los pacientes en ausencia del veterinario.",
         ],
         "incluye_historias": True,
+        "equipos_propios": None,
     },
     {
         "code": "02f",
@@ -275,6 +280,7 @@ ROLES = [
             "Atender y orientar al cliente sobre el cuidado estético y sanitario de su mascota.",
         ],
         "incluye_historias": True,
+        "equipos_propios": "tijeras, cuchillas y máquinas portátiles de peluquería",
     },
     {
         "code": "02g",
@@ -310,6 +316,7 @@ ROLES = [
             "Cumplir las normas LOPCYMAT y LOPDP aplicables a su puesto.",
         ],
         "incluye_historias": False,
+        "equipos_propios": None,
     },
 ]
 
@@ -467,9 +474,73 @@ def add_penalidades_table(doc):
         size=8, italic=True, color=GRAY_TEXT, space_after=6)
 
 
+def add_clause_equipos(doc, equipos_propios=None):
+    """
+    Cláusula sobre EQUIPOS, HERRAMIENTAS Y BIENES DE LA EMPRESA.
+
+    Equipos médicos, instrumental y herramientas son colocados por LA EMPRESA.
+    El trabajador solo trae su estetoscopio (si es veterinario) o sus herramientas
+    de peluquería (si es groomer), y debe cuidarlos.
+    """
+    add_clause_header(doc, "6", "EQUIPOS, HERRAMIENTAS Y BIENES DE LA EMPRESA")
+    add_para(doc,
+        "LA EMPRESA pondrá a disposición de EL(LA) TRABAJADOR(A) todos los equipos "
+        "médicos, instrumental clínico, instrumental quirúrgico, equipos de laboratorio, "
+        "equipos de radiología, monitores, materiales, insumos, mobiliario, instalaciones "
+        "y demás bienes necesarios para la correcta prestación de los servicios. Estos "
+        "bienes son propiedad exclusiva de LA EMPRESA y se entregan en comodato para el "
+        "ejercicio de las funciones del cargo.",
+        size=10, space_after=4)
+    add_para(doc,
+        "EL(LA) TRABAJADOR(A) se obliga a:",
+        size=10, bold=True, space_after=2)
+    obl_eq = [
+        "Cuidar los equipos, instrumental y bienes de LA EMPRESA como un buen padre de familia, utilizandolos exclusivamente para los fines del trabajo.",
+        "Reportar de inmediato cualquier daño, deterioro, falla o pérdida de los equipos a su superior jerárquico.",
+        "No sustraer, trasladar a terceros, ni utilizar los equipos de LA EMPRESA para fines personales o externos.",
+        "Mantener los equipos en las áreas asignadas y en condiciones de higiene y bioseguridad conforme a la NT-01-2008.",
+        "Devolver todos los equipos, instrumental y bienes al término de la relación laboral, en el mismo estado en que los recibió, salvo el deterioro natural por su uso adecuado.",
+    ]
+    for o in obl_eq:
+        add_bullet(doc, o, size=10)
+
+    # Párrafo específico por rol
+    if equipos_propios:
+        add_para(doc,
+            f"EL(LA) TRABAJADOR(A) podrá aportar para el ejercicio de sus funciones sus "
+            f"propios {equipos_propios}, los cuales serán de su propiedad exclusiva. "
+            f"Estos equipos de propiedad del trabajador deberán ser identificados y "
+            f"inventariados al inicio de la relación laboral, y al término de esta serán "
+            f"retirados por EL(LA) TRABAJADOR(A). Mientras dichos equipos se encuentren "
+            f"en las instalaciones de LA EMPRESA, EL(LA) TRABAJADOR(A) se obliga a "
+            f"mantenerlos en buen estado, desinfectados y bajo su responsabilidad. "
+            f"LA EMPRESA no se hace responsable por pérdida, robo o daño de los equipos "
+            f"de propiedad del trabajador, salvo dolo o negligencia grave de la empresa.",
+            size=10, space_before=4, space_after=6)
+    else:
+        add_para(doc,
+            "Queda expresamente prohibido a EL(LA) TRABAJADOR(A) introducir en las "
+            "instalaciones de LA EMPRESA equipos, instrumental o herramientas de su "
+            "propiedad sin autorización previa y por escrito de la Dirección. En caso "
+            "de autorizarse el uso de equipos propios para tareas específicas, los "
+            "mismos deberán ser identificados e inventariados previamente, y su uso, "
+            "cuidado y desinfección serán responsabilidad exclusiva del trabajador.",
+            size=10, space_before=4, space_after=6)
+
+    add_para(doc,
+        "El incumplimiento de las obligaciones de esta cláusula, especialmente el daño "
+        "intencional, sustracción o pérdida de equipos por negligencia grave, será "
+        "considerado falta grave conforme al artículo 79 de la LOTTT, sin perjuicio de "
+        "las acciones civiles y penales que correspondan. Los descuentos por pérdidas "
+        "o daños se tramitarán con autorización previa del Inspector del Trabajo "
+        "conforme al artículo 59 de la LOTTT.",
+        size=10, italic=True, color=GRAY_TEXT, space_after=6)
+
+
+
 def add_clause_historias(doc):
     """Cláusula adicional — Propiedad de historias clínicas y no competencia."""
-    add_clause_header(doc, "8", "PROPIEDAD DE HISTORIAS CLÍNICAS, CONFIDENCIALIDAD Y NO COMPETENCIA")
+    add_clause_header(doc, "9", "PROPIEDAD DE HISTORIAS CLÍNICAS, CONFIDENCIALIDAD Y NO COMPETENCIA")
     add_para(doc,
         "EL(LA) TRABAJADOR(A) reconoce y acepta que las historias clínicas, fichas de "
         "pacientes, registros médicos, protocolos clínicos y quirúrgicos, recetas y "
@@ -588,8 +659,11 @@ def gen_contrato(role, out_dir):
         "organismos de seguridad social conforme a la ley.",
         size=10, space_after=6)
 
-    # ===== CLÁUSULA 6 — OBLIGACIONES Y PROHIBICIONES =====
-    add_clause_header(doc, "6", "OBLIGACIONES Y PROHIBICIONES")
+    # ===== CLÁUSULA 6 — EQUIPOS, HERRAMIENTAS Y BIENES DE LA EMPRESA =====
+    add_clause_equipos(doc, role.get("equipos_propios"))
+
+    # ===== CLÁUSULA 7 — OBLIGACIONES Y PROHIBICIONES =====
+    add_clause_header(doc, "7", "OBLIGACIONES Y PROHIBICIONES")
     add_para(doc, "Son obligaciones de EL(LA) TRABAJADOR(A):", size=10, bold=True, space_after=2)
     obl = [
         "Cumplir con las órdenes e instrucciones de LA EMPRESA en todo lo concerniente al trabajo.",
@@ -615,8 +689,8 @@ def gen_contrato(role, out_dir):
         add_bullet(doc, p, size=10, color=RED_CRIT)
     add_para(doc, "", size=4, space_after=2)
 
-    # ===== CLÁUSULA 7 — PENALIDADES =====
-    add_clause_header(doc, "7", "PENALIDADES Y RÉGIMEN DISCIPLINARIO")
+    # ===== CLÁUSULA 8 — PENALIDADES =====
+    add_clause_header(doc, "8", "PENALIDADES Y RÉGIMEN DISCIPLINARIO")
     add_para(doc,
         "El incumplimiento de las obligaciones aquí previstas se sancionará conforme al "
         "siguiente régimen disciplinario simplificado de tres (3) niveles, sin perjuicio de "
@@ -625,12 +699,12 @@ def gen_contrato(role, out_dir):
         size=10, space_after=4)
     add_penalidades_table(doc)
 
-    # ===== CLÁUSULA 8 (solo Vet/Aux/Groomer) — HISTORIAS CLÍNICAS =====
+    # ===== CLÁUSULA 9 (solo Vet/Aux/Groomer) — HISTORIAS CLÍNICAS =====
     if role["incluye_historias"]:
         add_clause_historias(doc)
-        next_clause = 9
+        next_clause = 10
     else:
-        next_clause = 8
+        next_clause = 9
 
     # ===== CLÁUSULA FINAL — LOPDP =====
     add_clause_header(doc, str(next_clause), "PROTECCIÓN DE DATOS PERSONALES (LOPDP)")

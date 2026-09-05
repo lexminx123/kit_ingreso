@@ -565,8 +565,35 @@ def gen_contrato_honorarios_vet():
     add_bullet(doc, "No contactar clientes de LA EMPRESA para ofrecer servicios externos durante la vigencia del contrato y por 12 meses después de su terminación (cláusula de no competencia parcial post-contractual).")
     sp = doc.add_paragraph(); sp.paragraph_format.space_after = Pt(6)
 
-    # CLÁUSULA 6: OBLIGACIONES DE LA EMPRESA
-    add_section(doc, "CLÁUSULA SEXTA: OBLIGACIONES DE LA EMPRESA")
+    # CLÁUSULA 6: EQUIPOS, HERRAMIENTAS Y BIENES DE LA EMPRESA
+    add_section(doc, "CLÁUSULA SEXTA: EQUIPOS, HERRAMIENTAS Y BIENES")
+    add_para(doc,
+        "LA EMPRESA pondrá a disposición del PROFESIONAL todos los equipos médicos, "
+        "instrumental clínico y quirúrgico, equipos de laboratorio, de radiología, "
+        "monitores, materiales, insumos, medicamentos y demás bienes necesarios para la "
+        "prestación de los servicios veterinarios. Estos bienes son propiedad exclusiva "
+        "de LA EMPRESA y se entregan en comodato para el ejercicio de las funciones del "
+        "PROFESIONAL.", size=10, space_after=4)
+    add_para(doc,
+        "EL PROFESIONAL se obliga a: (i) cuidar los equipos como un buen padre de "
+        "familia; (ii) reportar de inmediato cualquier daño, deterioro, falla o pérdida; "
+        "(iii) no sustraer, trasladar a terceros, ni utilizar los equipos para fines "
+        "personales o externos; (iv) mantener los equipos en condiciones de higiene y "
+        "bioseguridad conforme a la NT-01-2008; y (v) devolver todos los equipos al "
+        "término del contrato, en el mismo estado en que los recibió, salvo el deterioro "
+        "natural por su uso adecuado.", size=10, space_after=4)
+    add_para(doc,
+        "EQUIPOS PROPIOS DEL PROFESIONAL: EL PROFESIONAL podrá aportar para el ejercicio "
+        "de sus funciones su propio estetoscopio, el cual será de su propiedad exclusiva. "
+        "Dicho equipo deberá ser identificado e inventariado al inicio del contrato y al "
+        "término será retirado por EL PROFESIONAL. Mientras el estetoscopio se encuentre "
+        "en las instalaciones de LA EMPRESA, EL PROFESIONAL se obliga a mantenerlo en buen "
+        "estado, desinfectado y bajo su responsabilidad. LA EMPRESA no se hace responsable "
+        "por pérdida, robo o daño del estetoscopio del PROFESIONAL, salvo dolo o "
+        "negligencia grave de la empresa.", size=10, italic=True, color=GRAY_TEXT, space_after=6)
+
+    # CLÁUSULA 7: OBLIGACIONES DE LA EMPRESA
+    add_section(doc, "CLÁUSULA SÉPTIMA: OBLIGACIONES DE LA EMPRESA")
     add_bullet(doc, "Pagar los honorarios y beneficios en la forma y oportunidad pactadas.")
     add_bullet(doc, "Proveer el espacio físico, equipos, instrumental, medicamentos e insumos necesarios para la prestación de los servicios.")
     add_bullet(doc, "Garantizar el mantenimiento de las instalaciones y equipos.")
@@ -576,8 +603,8 @@ def gen_contrato_honorarios_vet():
     add_bullet(doc, "Mantener el Sistema de Vigilancia Médica conforme a la NT-02-2008.")
     sp = doc.add_paragraph(); sp.paragraph_format.space_after = Pt(6)
 
-    # CLÁUSULA 7: PROPIEDAD INTELECTUAL Y HISTORIAS CLÍNICAS
-    add_section(doc, "CLÁUSULA SÉPTIMA: PROPIEDAD DE HISTORIAS CLÍNICAS")
+    # CLÁUSULA 8: PROPIEDAD INTELECTUAL Y HISTORIAS CLÍNICAS
+    add_section(doc, "CLÁUSULA OCTAVA: PROPIEDAD DE HISTORIAS CLÍNICAS")
     add_para(doc,
         "Las historias clínicas veterinarias, registros médicos, radiografías, resultados "
         "de laboratorio, fotografías clínicas de pacientes y demás documentación médica "
@@ -590,16 +617,16 @@ def gen_contrato_honorarios_vet():
         "al término del contrato. La violación de esta cláusula generará responsabilidad "
         "civil por daños y perjuicios.", space_after=6)
 
-    # CLÁUSULA 8: DURACIÓN
-    add_section(doc, "CLÁUSULA OCTAVA: DURACIÓN")
+    # CLÁUSULA 9: DURACIÓN
+    add_section(doc, "CLÁUSULA NOVENA: DURACIÓN")
     add_para(doc,
         "El presente contrato tendrá una duración de DOCE (12) MESES, contados a partir "
         "del ____ de ________________ de ______, hasta el ____ de ________________ de ______. "
         "Podrá prorrogarse por mutuo acuerdo mediante addendum suscrito por las partes con "
         "al menos 30 días de anticipación a su vencimiento.", space_after=6)
 
-    # CLÁUSULA 9: TERMINACIÓN
-    add_section(doc, "CLÁUSULA NOVENA: TERMINACIÓN")
+    # CLÁUSULA 10: TERMINACIÓN
+    add_section(doc, "CLÁUSULA DÉCIMA: TERMINACIÓN")
     add_para(doc, "El contrato podrá terminar por:")
     add_bullet(doc, "Vencimiento del plazo pactado, sin necesidad de notificación.")
     add_bullet(doc, "Resolución por mutuo acuerdo, mediante acta suscrita por las partes.")
@@ -611,8 +638,8 @@ def gen_contrato_honorarios_vet():
         "Solo procederá el pago de los honorarios pendientes por servicios efectivamente "
         "prestados a la fecha de terminación.", space_after=6)
 
-    # CLÁUSULA 10: RESPONSABILIDAD CIVIL
-    add_section(doc, "CLÁUSULA DÉCIMA: RESPONSABILIDAD CIVIL PROFESIONAL")
+    # CLÁUSULA 11: RESPONSABILIDAD CIVIL
+    add_section(doc, "CLÁUSULA DÉCIMA PRIMERA: RESPONSABILIDAD CIVIL PROFESIONAL")
     add_para(doc,
         "EL PROFESIONAL responde civil y profesionalmente por los actos, omisiones y "
         "decisiones clínicas que adopte en el ejercicio de su profesión. LA EMPRESA no "
@@ -625,8 +652,8 @@ def gen_contrato_honorarios_vet():
         "a LA EMPRESA al momento de la suscripción del presente contrato.",
         space_after=6)
 
-    # CLÁUSULA 11: CONFIDENCIALIDAD
-    add_section(doc, "CLÁUSULA DÉCIMA PRIMERA: CONFIDENCIALIDAD")
+    # CLÁUSULA 12: CONFIDENCIALIDAD
+    add_section(doc, "CLÁUSULA DÉCIMA SEGUNDA: CONFIDENCIALIDAD")
     add_para(doc,
         "EL PROFESIONAL se obliga a mantener en reserva toda la información de LA EMPRESA, "
         "sus clientes, pacientes, proveedores y estrategias comerciales, durante la "
@@ -634,8 +661,8 @@ def gen_contrato_honorarios_vet():
         "violación de esta cláusula generará responsabilidad civil por daños y perjuicios.",
         space_after=6)
 
-    # CLÁUSULA 12: LOPDP
-    add_section(doc, "CLÁUSULA DÉCIMA SEGUNDA: PROTECCIÓN DE DATOS PERSONALES")
+    # CLÁUSULA 13: LOPDP
+    add_section(doc, "CLÁUSULA DÉCIMA TERCERA: PROTECCIÓN DE DATOS PERSONALES")
     add_para(doc,
         "Las partes se comprometen a cumplir la Ley Orgánica de Protección de Datos "
         "Personales (LOPDP) en el tratamiento de los datos personales de clientes, "
@@ -643,8 +670,8 @@ def gen_contrato_honorarios_vet():
         "datos personales con fines administrativos y tributarios, conforme a la "
         "Autorización firmada por separado.", space_after=6)
 
-    # CLÁUSULA 13: DOMICILIO Y JURISDICCIÓN
-    add_section(doc, "CLÁUSULA DÉCIMA TERCERA: DOMICILIO Y JURISDICCIÓN")
+    # CLÁUSULA 14: DOMICILIO Y JURISDICCIÓN
+    add_section(doc, "CLÁUSULA DÉCIMA CUARTA: DOMICILIO Y JURISDICCIÓN")
     add_para(doc,
         "Para todos los efectos derivados del presente contrato, las partes eligen como "
         "domicilio procesal especial, con exclusión de cualquier otro, la ciudad de Los "
@@ -837,14 +864,32 @@ def gen_contrato_honorarios_groomer():
     add_bullet(doc, "Respetar la autonomía técnica del PROFESIONAL en los servicios de peluquería.")
     sp = doc.add_paragraph(); sp.paragraph_format.space_after = Pt(6)
 
-    # CLÁUSULA 7: HERRAMIENTAS
+    # CLÁUSULA 7: HERRAMIENTAS Y EQUIPOS
     add_section(doc, "CLÁUSULA SÉPTIMA: HERRAMIENTAS Y EQUIPOS")
     add_para(doc,
-        "EL PROFESIONAL utilizará sus propias herramientas de corte (tijeras, cuchillas, "
-        "máquinas portátiles, peines, cepillos) que son de su propiedad. LA EMPRESA "
-        "proveerá la bañera, mesa de peluquería, secadora, jaulas, champús, "
-        "acondicionadores, toallas y demás insumos. Las herramientas de EL PROFESIONAL "
-        "se identificarán y se entregarán al término del contrato.", space_after=6)
+        "LA EMPRESA pondrá a disposición del PROFESIONAL la bañera, mesa de peluquería, "
+        "secadora, jaulas, champús, acondicionadores, toallas y demás insumos necesarios "
+        "para la prestación de los servicios de peluquería canina. Estos bienes son "
+        "propiedad exclusiva de LA EMPRESA y se entregan en comodato para el ejercicio de "
+        "las funciones del PROFESIONAL.", size=10, space_after=4)
+    add_para(doc,
+        "EL PROFESIONAL se obliga a: (i) cuidar los equipos como un buen padre de familia; "
+        "(ii) reportar de inmediato cualquier daño, deterioro, falla o pérdida a LA EMPRESA; "
+        "(iii) no sustraer, trasladar a terceros, ni utilizar los equipos para fines "
+        "personales o externos; (iv) mantener los equipos en condiciones de higiene y "
+        "bioseguridad conforme a la NT-01-2008; y (v) devolver todos los equipos al término "
+        "del contrato, en el mismo estado en que los recibió, salvo el deterioro natural "
+        "por su uso adecuado.", size=10, space_after=4)
+    add_para(doc,
+        "HERRAMIENTAS PROPIAS DEL PROFESIONAL: EL PROFESIONAL utilizará sus propias "
+        "herramientas de corte (tijeras, cuchillas, máquinas portátiles, peines, cepillos) "
+        "que son de su propiedad exclusiva. Estas herramientas deberán ser identificadas e "
+        "inventariadas al inicio del contrato y al término serán retiradas por EL "
+        "PROFESIONAL. Mientras dichas herramientas se encuentren en las instalaciones de "
+        "LA EMPRESA, EL PROFESIONAL se obliga a mantenerlas en buen estado, desinfectadas y "
+        "bajo su responsabilidad. LA EMPRESA no se hace responsable por pérdida, robo o "
+        "daño de las herramientas del PROFESIONAL, salvo dolo o negligencia grave de la "
+        "empresa.", size=10, italic=True, color=GRAY_TEXT, space_after=6)
 
     # CLÁUSULA 8: RESPONSABILIDAD
     add_section(doc, "CLÁUSULA OCTAVA: RESPONSABILIDAD CIVIL")
@@ -880,22 +925,22 @@ def gen_contrato_honorarios_groomer():
         "laborales. Solo procederá el pago de honorarios pendientes por servicios "
         "efectivamente prestados.", space_after=6)
 
-    # CLÁUSULA 11: CONFIDENCIALIDAD
-    add_section(doc, "CLÁUSULA DÉCIMA PRIMERA: CONFIDENCIALIDAD")
+    # CLÁUSULA 12: CONFIDENCIALIDAD
+    add_section(doc, "CLÁUSULA DÉCIMA SEGUNDA: CONFIDENCIALIDAD")
     add_para(doc,
         "EL PROFESIONAL se obliga a mantener en reserva toda la información de LA EMPRESA, "
         "sus clientes y pacientes, durante la vigencia del contrato y por TRES (3) AÑOS "
         "después de su terminación.", space_after=6)
 
-    # CLÁUSULA 12: LOPDP
-    add_section(doc, "CLÁUSULA DÉCIMA SEGUNDA: PROTECCIÓN DE DATOS PERSONALES")
+    # CLÁUSULA 13: LOPDP
+    add_section(doc, "CLÁUSULA DÉCIMA TERCERA: PROTECCIÓN DE DATOS PERSONALES")
     add_para(doc,
         "Las partes cumplirán la LOPDP. EL PROFESIONAL autoriza a LA EMPRESA el "
         "tratamiento de sus datos personales con fines administrativos y tributarios.",
         space_after=6)
 
-    # CLÁUSULA 13: DOMICILIO Y JURISDICCIÓN
-    add_section(doc, "CLÁUSULA DÉCIMA TERCERA: DOMICILIO Y JURISDICCIÓN")
+    # CLÁUSULA 14: DOMICILIO Y JURISDICCIÓN
+    add_section(doc, "CLÁUSULA DÉCIMA CUARTA: DOMICILIO Y JURISDICCIÓN")
     add_para(doc,
         "Para todos los efectos, las partes eligen como domicilio procesal especial la "
         "ciudad de Los Teques, Estado Miranda, a cuyos tribunales civiles declaran "

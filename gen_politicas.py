@@ -889,37 +889,93 @@ def gen_politica_redes_sociales():
         "No se publicarán fotos o videos de menores de edad sin autorización expresa de "
         "sus representantes legales, conforme al artículo 60 de la Constitución y la LOPDP.")
 
-    # ===== CAPÍTULO VI — GESTIÓN DE INCIDENTES =====
-    add_chapter(doc, "VI", "GESTIÓN DE INCIDENTES EN REDES SOCIALES")
-    add_article(doc, 14, "Reporte obligatorio",
+    # ===== CAPÍTULO VII — AUTORIZACIÓN PREVIA PARA PUBLICACIONES DE CONTENIDO DE LA CLÍNICA =====
+    add_chapter(doc, "VII", "AUTORIZACIÓN PREVIA PARA PUBLICACIONES DE CONTENIDO DE LA CLÍNICA")
+    add_article(doc, 17, "Principio general de autorización previa",
+        "Toda publicación, difusión o comunicación pública en redes sociales, medios "
+        "tradicionales, plataformas digitales o cualquier canal de comunicación que "
+        "incluya contenido originado en las instalaciones de LA EMPRESA, o que use la "
+        "imagen, marca, logos, uniformes, mascotas de clientes, casos clínicos, "
+        "procedimientos médicos, quirúrgicos o de peluquería, personal de la clínica en "
+        "horario de trabajo o en las instalaciones, requiere AUTORIZACIÓN PREVIA, EXPRESA "
+        "Y POR ESCRITO de la Dirección de LA EMPRESA. La sola solicitud verbal NO autoriza "
+        "la publicación.")
+    add_article(doc, 18, "Procedimiento de solicitud de autorización",
+        "El personal que desee publicar contenido que involucre cualquier elemento "
+        "identificable con LA EMPRESA deberá: (i) presentar la solicitud por escrito a la "
+        "Dirección con al menos 3 días hábiles de anticipación a la fecha prevista de "
+        "publicación; (ii) acompañar el contenido completo que se desea publicar "
+        "(fotografías, videos, texto, capturas); (iii) especificar la plataforma, fecha y "
+        "hora de publicación; (iv) aguardar la decisión de la Dirección. El silencio de la "
+        "Dirección vencido el plazo de 3 días hábiles se considerará DENEGACIÓN. La "
+        "publicación sin autorización expresa y por escrito constituye incumplimiento "
+        "grave del presente documento y será causal de las sanciones del Capítulo IX.")
+    add_article(doc, 19, "Contenido que requiere autorización previa",
+        "Requiere autorización previa la publicación de:")
+    add_bullet(doc, "Fotografías o videos de las instalaciones de la clínica (recepción, consultorios, quirófano, hospitalización, laboratorio, peluquería, depósito).")
+    add_bullet(doc, "Fotografías o videos de mascotas de clientes (antes/después de procedimientos, hospitalización, cirugía, peluquería).")
+    add_bullet(doc, "Casos clínicos, antes/después, testimonios de clientes, procedimientos médicos o quirúrgicos.")
+    add_bullet(doc, "Uniformes, logos, productos con marca de LA EMPRESA, materiales de empaque o branding.")
+    add_bullet(doc, "Personal de LA EMPRESA en horario de trabajo o dentro de las instalaciones.")
+    add_bullet(doc, "Cualquier comunicación que pueda interpretarse como oficial de LA EMPRESA (promociones, avisos, recomendaciones, consejos veterinarios, lanzamientos de servicios, novedades).")
+    add_article(doc, 20, "Contenido expresamente prohibido (no autorizable)",
+        "Aunque medie solicitud de autorización, la Dirección NO autorizará la publicación de:")
+    add_bullet(doc, "Fotografías o videos de pacientes en estado crítico, fallecidos, o con lesiones graves sin el consentimiento escrito del propietario.")
+    add_bullet(doc, "Contenido que exponga, difame o afecte la dignidad de mascotas, clientes, compañeros o proveedores.")
+    add_bullet(doc, "Casos clínicos que identifiquen al paciente o al propietario sin su consentimiento escrito (LOPDP).")
+    add_bullet(doc, "Información sobre errores médicos, mala praxis, demandas o investigaciones internas.")
+    add_bullet(doc, "Contenido que mencione a clínicas competidoras o que compare los servicios de LA EMPRESA con los de la competencia.")
+    add_bullet(doc, "Contenido de carácter político, religioso, polémico o que pueda afectar la neutralidad institucional de LA EMPRESA.")
+    add_article(doc, 21, "Propiedad de los contenidos autorizados",
+        "Todo contenido creado, publicado o difundido en el marco de la relación laboral "
+        "que utilice imágenes, datos, casos, instalaciones, pacientes, uniformes, logos o "
+        "cualquier elemento identificable con LA EMPRESA, sea o no autorizado, será "
+        "propiedad exclusiva de LA EMPRESA, conforme a la Ley sobre el Derecho de Autor "
+        "(Art. 15 — obra por encargo). El personal cede a LA EMPRESA todos los derechos "
+        "patrimoniales sobre dichos contenidos, sin necesidad de contraprestación "
+        "adicional, entendiéndose incluida dicha cesión en su remuneración.")
+    add_article(doc, 22, "Retirada de contenido no autorizado",
+        "Si el personal publica contenido sin la autorización previa exigida en este "
+        "Capítulo, LA EMPRESA podrá: (i) exigir la retirada inmediata del contenido en un "
+        "plazo máximo de 2 horas; (ii) instruir al trabajador para que emita una disculpa "
+        "pública si la Dirección lo considera necesario; (iii) iniciar las acciones "
+        "disciplinarias del Capítulo IX; (iv) iniciar las acciones civiles y penales que "
+        "correspondan por daños a la reputación y a la imagen corporativa; y (v) exigir la "
+        "indemnización por los daños y perjuicios causados.")
+
+    # ===== CAPÍTULO VIII — GESTIÓN DE INCIDENTES =====
+    add_chapter(doc, "VIII", "GESTIÓN DE INCIDENTES EN REDES SOCIALES")
+    add_article(doc, 23, "Reporte obligatorio",
         "El personal que detecte publicaciones que afecten a LA EMPRESA, a clientes, "
         "mascotas o compañeros, deberá reportarlo inmediatamente a la Gerencia por el "
         "canal más rápido disponible (WhatsApp corporativo o correo electrónico). No se "
         "responderá ni se replicará el contenido sin autorización.")
-    add_article(doc, 15, "Comunicado oficial",
+    add_article(doc, 24, "Comunicado oficial",
         "En caso de incidentes relevantes (accidentes, denuncias, hechos de interés "
         "público), LA EMPRESA emitirá un comunicado oficial. El personal se abstendrá de "
         "publicar opiniones o comentarios antes de dicho comunicado.")
-    add_article(doc, 16, "Respuesta a comentarios negativos",
+    add_article(doc, 25, "Respuesta a comentarios negativos",
         "La respuesta a comentarios negativos o quejas de clientes en redes sociales "
         "corresponde exclusivamente a la Gerencia. El personal no deberá responder "
         "directamente ni eliminar comentarios sin autorización.")
 
-    # ===== CAPÍTULO VII — SANCIONES =====
-    add_chapter(doc, "VII", "SANCIONES")
-    add_article(doc, 17, "Régimen sancionatorio",
+    # ===== CAPÍTULO IX — SANCIONES =====
+    add_chapter(doc, "IX", "SANCIONES")
+    add_article(doc, 26, "Régimen sancionatorio",
         "El incumplimiento de la presente Política se sancionará conforme al Reglamento "
         "Interno de Trabajo y al artículo 79 de la LOTTT. La publicación deliberada de "
         "información confidencial, historias clínicas o contenido que afecte la imagen de "
-        "LA EMPRESA constituye falta muy grave y será causal de despido justificado.")
+        "LA EMPRESA, así como la publicación sin autorización previa de contenido que "
+        "involucre la clínica, mascotas, procedimientos o personal de LA EMPRESA, "
+        "constituye falta muy grave y será causal de despido justificado.")
 
-    # ===== CAPÍTULO VIII — DISPOSICIONES FINALES =====
-    add_chapter(doc, "VIII", "DISPOSICIONES FINALES")
-    add_article(doc, 18, "Aceptación",
+    # ===== CAPÍTULO X — DISPOSICIONES FINALES =====
+    add_chapter(doc, "X", "DISPOSICIONES FINALES")
+    add_article(doc, 27, "Aceptación",
         "La firma de la carta de recepción al final del presente documento tiene carácter "
         "de aceptación formal y explícita de la Política. El personal declara comprender "
         "las obligaciones aquí establecidas y se compromete a cumplirlas.")
-    add_article(doc, 19, "Vigencia y revisión",
+    add_article(doc, 28, "Vigencia y revisión",
         "Esta Política entra en vigencia desde su entrega y se revisará anualmente o "
         "cuando las plataformas o la legislación lo requieran.")
 

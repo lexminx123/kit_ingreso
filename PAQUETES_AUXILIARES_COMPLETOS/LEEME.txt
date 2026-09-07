@@ -1,0 +1,147 @@
+PAQUETES COMPLETOS — AUXILIARES VETERINARIOS
+ALIKA PETS · Grupo Caval 1003, C.A.
+======================================================================
+
+Este paquete contiene 5 carpetas, una por cada auxiliar veterinario.
+Cada carpeta contiene 21 documentos COMPLETOS del kit de ingreso.
+
+  01_Valeria_Katiuska_Rangel_Perez/
+    Nombre: Valeria Katiuska Rangel Pérez
+    Cédula: V-27.279.527
+    Documentos (21 archivos .docx):
+      01_Solicitud_Empleo.docx
+      02_Contrato_Trabajo_Auxiliar_Veterinario.docx
+      03_Descripcion_Cargo_Auxiliar_Veterinario.docx
+      04_Autorizacion_Deposito_Prestaciones.docx
+      05_Designacion_Beneficiarios.docx
+      06_Notificacion_Riesgos_Auxiliar_Veterinario.docx
+      07_Hoja_Recorrido_Habitual.docx
+      08_Acta_Entrega_EPP.docx
+      09_Examen_Medico_Pre_Empleo.docx
+      10_Cartilla_Bioseguridad_Veterinaria.docx
+      11_Checklist_Registros_Legales.docx
+      12_Autorizacion_Datos_Personales_LOPDP.docx
+      13_Autorizacion_Imagen.docx
+      14_Autorizacion_Vigilancia_Camaras.docx
+      15_Reglamento_Interno.docx
+      16_Codigo_Conducta_Etica.docx
+      17_Politica_Confidencialidad.docx
+      18_Politica_Uso_Redes_Sociales.docx
+      19_Protocolo_Mordeduras_Zoonosis.docx
+      20_Procedimiento_Reporte_Incidentes.docx
+      21_Carta_Aceptacion_General.docx
+
+  02_Pedro_Jose_Baldovino_Cardozo/
+    Nombre: Pedro José Baldovino Cardozo
+    Cédula: V-27.180.661
+    Documentos (21 archivos .docx):
+      01_Solicitud_Empleo.docx
+      02_Contrato_Trabajo_Auxiliar_Veterinario.docx
+      03_Descripcion_Cargo_Auxiliar_Veterinario.docx
+      04_Autorizacion_Deposito_Prestaciones.docx
+      05_Designacion_Beneficiarios.docx
+      06_Notificacion_Riesgos_Auxiliar_Veterinario.docx
+      07_Hoja_Recorrido_Habitual.docx
+      08_Acta_Entrega_EPP.docx
+      09_Examen_Medico_Pre_Empleo.docx
+      10_Cartilla_Bioseguridad_Veterinaria.docx
+      11_Checklist_Registros_Legales.docx
+      12_Autorizacion_Datos_Personales_LOPDP.docx
+      13_Autorizacion_Imagen.docx
+      14_Autorizacion_Vigilancia_Camaras.docx
+      15_Reglamento_Interno.docx
+      16_Codigo_Conducta_Etica.docx
+      17_Politica_Confidencialidad.docx
+      18_Politica_Uso_Redes_Sociales.docx
+      19_Protocolo_Mordeduras_Zoonosis.docx
+      20_Procedimiento_Reporte_Incidentes.docx
+      21_Carta_Aceptacion_General.docx
+
+  03_Cinthia_Paola_Hernandez_Padilla/
+    Nombre: Cinthia Paola Hernández Padilla
+    Cédula: V-25.562.814
+    Documentos (21 archivos .docx):
+      01_Solicitud_Empleo.docx
+      02_Contrato_Trabajo_Auxiliar_Veterinario.docx
+      03_Descripcion_Cargo_Auxiliar_Veterinario.docx
+      04_Autorizacion_Deposito_Prestaciones.docx
+      05_Designacion_Beneficiarios.docx
+      06_Notificacion_Riesgos_Auxiliar_Veterinario.docx
+      07_Hoja_Recorrido_Habitual.docx
+      08_Acta_Entrega_EPP.docx
+      09_Examen_Medico_Pre_Empleo.docx
+      10_Cartilla_Bioseguridad_Veterinaria.docx
+      11_Checklist_Registros_Legales.docx
+      12_Autorizacion_Datos_Personales_LOPDP.docx
+      13_Autorizacion_Imagen.docx
+      14_Autorizacion_Vigilancia_Camaras.docx
+      15_Reglamento_Interno.docx
+      16_Codigo_Conducta_Etica.docx
+      17_Politica_Confidencialidad.docx
+      18_Politica_Uso_Redes_Sociales.docx
+      19_Protocolo_Mordeduras_Zoonosis.docx
+      20_Procedimiento_Reporte_Incidentes.docx
+      21_Carta_Aceptacion_General.docx
+
+  04_Joxelina_Jacqueline_Serrano/
+    Nombre: Joxelina Jacqueline Serrano
+    Cédula: V-14.058.904
+    Documentos (21 archivos .docx):
+      01_Solicitud_Empleo.docx
+      02_Contrato_Trabajo_Auxiliar_Veterinario.docx
+      03_Descripcion_Cargo_Auxiliar_Veterinario.docx
+      04_Autorizacion_Deposito_Prestaciones.docx
+      05_Designacion_Beneficiarios.docx
+      06_Notificacion_Riesgos_Auxiliar_Veterinario.docx
+      07_Hoja_Recorrido_Habitual.docx
+      08_Acta_Entrega_EPP.docx
+      09_Examen_Medico_Pre_Empleo.docx
+      10_Cartilla_Bioseguridad_Veterinaria.docx
+      11_Checklist_Registros_Legales.docx
+      12_Autorizacion_Datos_Personales_LOPDP.docx
+      13_Autorizacion_Imagen.docx
+      14_Autorizacion_Vigilancia_Camaras.docx
+      15_Reglamento_Interno.docx
+      16_Codigo_Conducta_Etica.docx
+      17_Politica_Confidencialidad.docx
+      18_Politica_Uso_Redes_Sociales.docx
+      19_Protocolo_Mordeduras_Zoonosis.docx
+      20_Procedimiento_Reporte_Incidentes.docx
+      21_Carta_Aceptacion_General.docx
+
+  05_Rosa_Margarita_Blanco_Martinez/
+    Nombre: Rosa Margarita Blanco Martínez
+    Cédula: V-14.850.506
+    Documentos (21 archivos .docx):
+      01_Solicitud_Empleo.docx
+      02_Contrato_Trabajo_Auxiliar_Veterinario.docx
+      03_Descripcion_Cargo_Auxiliar_Veterinario.docx
+      04_Autorizacion_Deposito_Prestaciones.docx
+      05_Designacion_Beneficiarios.docx
+      06_Notificacion_Riesgos_Auxiliar_Veterinario.docx
+      07_Hoja_Recorrido_Habitual.docx
+      08_Acta_Entrega_EPP.docx
+      09_Examen_Medico_Pre_Empleo.docx
+      10_Cartilla_Bioseguridad_Veterinaria.docx
+      11_Checklist_Registros_Legales.docx
+      12_Autorizacion_Datos_Personales_LOPDP.docx
+      13_Autorizacion_Imagen.docx
+      14_Autorizacion_Vigilancia_Camaras.docx
+      15_Reglamento_Interno.docx
+      16_Codigo_Conducta_Etica.docx
+      17_Politica_Confidencialidad.docx
+      18_Politica_Uso_Redes_Sociales.docx
+      19_Protocolo_Mordeduras_Zoonosis.docx
+      20_Procedimiento_Reporte_Incidentes.docx
+      21_Carta_Aceptacion_General.docx
+
+======================================================================
+Total: 105 documentos Word (.docx) + este archivo LEEME.txt
+
+Documentos prellenados con datos del auxiliar (no requieren llenar nombre/cédula):
+  01, 02, 04, 05, 07, 08, 09, 11, 12, 13, 14, 21
+
+Documentos estándar (compartidos del kit general):
+  03, 06, 10, 15, 16, 17, 18, 19, 20
+
+Generado: Septiembre 2026 · Versión 4.0

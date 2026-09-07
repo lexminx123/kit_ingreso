@@ -1,0 +1,51 @@
+PAQUETES COMPLETOS — AUXILIARES VETERINARIOS (TODO PRELLENADO)
+GRUPO CAVAL 1003, C.A. · ALIKA PETS
+======================================================================
+
+5 carpetas, una por cada auxiliar veterinario.
+Cada carpeta contiene 21 documentos COMPLETOS del kit de ingreso,
+con TODOS los campos prellenados con los datos del auxiliar.
+
+Datos prellenados en cada documento:
+  - Nombre completo del auxiliar
+  - Cédula de identidad
+  - Dirección de habitación
+  - Teléfono
+  - Correo electrónico
+  - Cargo: AUXILIAR VETERINARIO(A)
+  - Departamento: Clínica Veterinaria
+  - Fecha de ingreso: 01 de octubre de 2026
+  - Fecha de firma: 07 de septiembre de 2026
+  - Lugar: Los Teques, Estado Miranda
+  - Salario: 50$ base + 4 bonos no salariales (250$/mes total)
+  - Empresa: GRUPO CAVAL 1003, C.A. (RIF J501662533)
+  - Directora Gerente: ESNATLIM ELENA SIMOZA (C.I. V-17.976.287)
+
+  01_Valeria_Katiuska_Rangel_Perez/
+    Nombre: Valeria Katiuska Rangel Pérez
+    Cédula: V-27.279.527
+    Cargo: AUXILIAR VETERINARIO(A)
+
+  02_Pedro_Jose_Baldovino_Cardozo/
+    Nombre: Pedro José Baldovino Cardozo
+    Cédula: V-27.180.661
+    Cargo: AUXILIAR VETERINARIO(A)
+
+  03_Cinthia_Paola_Hernandez_Padilla/
+    Nombre: Cinthia Paola Hernández Padilla
+    Cédula: V-25.562.814
+    Cargo: AUXILIAR VETERINARIO(A)
+
+  04_Joxelina_Jacqueline_Serrano/
+    Nombre: Joxelina Jacqueline Serrano
+    Cédula: V-14.058.904
+    Cargo: AUXILIAR VETERINARIO(A)
+
+  05_Rosa_Margarita_Blanco_Martinez/
+    Nombre: Rosa Margarita Blanco Martínez
+    Cédula: V-14.850.506
+    Cargo: AUXILIAR VETERINARIO(A)
+
+======================================================================
+Total: 105 documentos Word (.docx) + LEEME.txt
+Generado: Septiembre 2026 · Versión 4.0

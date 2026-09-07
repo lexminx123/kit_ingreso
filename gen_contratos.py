@@ -52,11 +52,13 @@ from _common import (
 )
 
 # ============================================================
-# Datos legales y económicos (actualizados Gaceta 7.026 Ext. 28/04/2025)
+# Datos económicos (montos en USD, vigentes conforme a la última Gaceta Oficial)
 # ============================================================
-SALARIO_BASICO = "Bs. 210,00"
-CESTATICKET    = "Bs. 1.500,00"
-BONO_TRANSPORTO = "Bs. 200,00"
+SALARIO_BASICO = "50$"
+CESTATICKET    = "80$"
+BONO_TRANSPORTO = "40$"
+BONO_BUEN_VIVIR = "40$"
+BONO_RENTA_TELEFONICA = "40$"
 DOMICILIO_PROCESAL = "Los Teques, Estado Miranda"
 
 # ============================================================
@@ -75,12 +77,12 @@ ROLES = [
         "duracion_detalle": (
             "El presente contrato se celebra por tiempo indeterminado, conforme a lo "
             "previsto en el artículo 65 de la Ley Orgánica del Trabajo, los Trabajadores "
-            "y las Trabajadoras (LOTTT). La relación laboral comenzará a regir a partir "
+            "y las Trabajadoras (la legislación aplicable). La relación laboral comenzará a regir a partir "
             "de la fecha de inicio de actividades del trabajador en la empresa."
         ),
         "prueba": "30 días continuos",
         "prueba_detalle": (
-            "Conforme al artículo 22 de la LOTTT, se establece un período de prueba de "
+            "Se establece un período de prueba de "
             "treinta (30) días continuos, durante el cual cualquiera de las partes "
             "podrá dar por terminada la relación laboral sin necesidad de preaviso ni "
             "indemnización alguna."
@@ -90,7 +92,7 @@ ROLES = [
             "Supervisar al personal de las tres áreas (clínica, tienda y peluquería) y velar por el cumplimiento de los protocolos internos.",
             "Elaborar y ejecutar el plan estratégico comercial, presupuesto anual y metas de venta.",
             "Gestionar relaciones con proveedores, distribuidores y laboratorios veterinarios.",
-            "Garantizar el cumplimiento de las normas legales: LOTTT, LOPCYMAT, LOPDP, NT-01-2008, NT-02-2008 y demás normativa venezolana aplicable.",
+            "Garantizar el cumplimiento de las normas legales: la legislación aplicable, la normativa de prevención aplicable, la normativa de protección de datos aplicable, las normas de bioseguridad aplicables, las normas de vigilancia médica aplicables y demás normativa venezolana aplicable.",
             "Autorizar gastos, pagos a proveedores y movimientos bancarios conforme a los límites aprobados por la Junta Directiva.",
             "Conducir reuniones de coordinación semanal con encargados de área.",
             "Atender y resolver escalamientos de clientes cuando corresponda.",
@@ -109,7 +111,7 @@ ROLES = [
         "footer_label": "Contrato Encargado de Clínica v3.0",
         "duracion": "6 MESES + PRÓRROGA",
         "duracion_detalle": (
-            "Conforme a los artículos 64 y 65 de la LOTTT, el presente contrato se celebra "
+            "El presente contrato se celebra "
             "por tiempo determinado de seis (6) meses, en razón de la naturaleza del cargo "
             "de encargado(a) de clínica, cuya actividad admite esta modalidad. El contrato "
             "podrá prorrogarse por igual período hasta por el límite legal de un (1) año; "
@@ -117,7 +119,7 @@ ROLES = [
         ),
         "prueba": "30 días continuos",
         "prueba_detalle": (
-            "Conforme al artículo 22 de la LOTTT, se establece un período de prueba de "
+            "Se establece un período de prueba de "
             "treinta (30) días continuos, durante el cual cualquiera de las partes "
             "podrá dar por terminada la relación laboral sin necesidad de preaviso ni "
             "indemnización."
@@ -126,9 +128,9 @@ ROLES = [
             "Coordinar la atención clínica y quirúrgica de pacientes bajo supervisión del médico veterinario tratante.",
             "Gestionar la agenda de citas, hospitalización y cirugías.",
             "Supervisar el inventario de medicamentos, insumos médicos y material quirúrgico de la clínica.",
-            "Velar por el cumplimiento de las normas de bioseguridad (NT-01-2008) y vigilancia médica (NT-02-2008).",
+            "Velar por el cumplimiento de las normas de bioseguridad (las normas de bioseguridad aplicables) y vigilancia médica (las normas de vigilancia médica aplicables).",
             "Atender y resolver reclamaciones de clientes de la clínica.",
-            "Llevar el control de historias clínicas y su archivo conforme al artículo 23 de la Ley de Ejercicio de la Medicina Veterinaria.",
+            "Llevar el control de historias clínicas y su archivo conforme a la normativa aplicable.",
             "Coordinar el turno del personal auxiliar y de enfermería veterinaria.",
             "Reportar a Gerencia los indicadores de atención clínica y egresos hospitalarios.",
         ],
@@ -145,7 +147,7 @@ ROLES = [
         "footer_label": "Contrato Encargado de Tienda v3.0",
         "duracion": "6 MESES + PRÓRROGA",
         "duracion_detalle": (
-            "Conforme a los artículos 64 y 65 de la LOTTT, el presente contrato se celebra "
+            "El presente contrato se celebra "
             "por tiempo determinado de seis (6) meses, en razón de la naturaleza del cargo "
             "de encargado(a) de tienda. El contrato podrá prorrogarse por igual período "
             "hasta por el límite legal de un (1) año; vencido este plazo, la relación se "
@@ -153,7 +155,7 @@ ROLES = [
         ),
         "prueba": "30 días continuos",
         "prueba_detalle": (
-            "Conforme al artículo 22 de la LOTTT, se establece un período de prueba de "
+            "Se establece un período de prueba de "
             "treinta (30) días continuos, durante el cual cualquiera de las partes "
             "podrá dar por terminada la relación laboral sin necesidad de preaviso ni "
             "indemnización."
@@ -166,7 +168,7 @@ ROLES = [
             "Garantizar la atención conforme a las políticas de servicio al cliente y manejo de quejas.",
             "Coordinar el turno del personal de ventas de la tienda.",
             "Reportar a Gerencia los indicadores comerciales diarios y mensuales (ventas, devoluciones, mermas).",
-            "Cumplir y hacer cumplir las normas LOPCYMAT aplicables al área de tienda (ergonomía, manipulación manual de cargas).",
+            "Cumplir y hacer cumplir las normas la normativa de prevención aplicable aplicables al área de tienda (ergonomía, manipulación manual de cargas).",
         ],
         "incluye_historias": False,
         "equipos_propios": None,
@@ -182,14 +184,14 @@ ROLES = [
         "duracion": "INDEFINIDA",
         "duracion_detalle": (
             "El presente contrato se celebra por tiempo indeterminado, conforme a lo "
-            "previsto en el artículo 65 de la LOTTT, en razón de la naturaleza permanente "
+            "en razón de la naturaleza permanente "
             "de las funciones del médico veterinario en la clínica. La relación laboral "
             "comenzará a regir a partir de la fecha de inicio de actividades del "
             "trabajador en la empresa."
         ),
         "prueba": "30 días continuos",
         "prueba_detalle": (
-            "Conforme al artículo 22 de la LOTTT, se establece un período de prueba de "
+            "Se establece un período de prueba de "
             "treinta (30) días continuos, durante el cual cualquiera de las partes "
             "podrá dar por terminada la relación laboral sin necesidad de preaviso ni "
             "indemnización."
@@ -200,7 +202,7 @@ ROLES = [
             "Llevar y mantener actualizadas las historias clínicas de los pacientes atendidos.",
             "Prescribir y administrar medicamentos, incluidas sustancias controladas, conforme a la normativa del SENAC y la Ley Orgánica de Drogas.",
             "Atender emergencias y guardias conforme al cronograma establecido.",
-            "Aplicar las normas de bioseguridad NT-01-2008 y vigilancia médica NT-02-2008.",
+            "Aplicar las normas de bioseguridad las normas de bioseguridad aplicables y vigilancia médica las normas de vigilancia médica aplicables.",
             "Atender y resolver consultas de los dueños o responsables de los pacientes.",
             "Mantener actualizado el registro de vacunas y desparasitaciones.",
             "Reportar enfermedades de notificación obligatoria ante las autoridades sanitarias competentes.",
@@ -219,7 +221,7 @@ ROLES = [
         "footer_label": "Contrato Auxiliar Veterinario v3.0",
         "duracion": "3 MESES + PRÓRROGA",
         "duracion_detalle": (
-            "Conforme a los artículos 64 y 65 de la LOTTT, el presente contrato se celebra "
+            "El presente contrato se celebra "
             "por tiempo determinado de tres (3) meses, en razón de la naturaleza del cargo "
             "de auxiliar veterinario. El contrato podrá prorrogarse por períodos iguales "
             "hasta por el límite legal; vencido este plazo, la relación se considerará "
@@ -227,7 +229,7 @@ ROLES = [
         ),
         "prueba": "15 días continuos",
         "prueba_detalle": (
-            "Conforme al artículo 22 de la LOTTT, se establece un período de prueba de "
+            "Se establece un período de prueba de "
             "quince (15) días continuos, durante el cual cualquiera de las partes "
             "podrá dar por terminada la relación laboral sin necesidad de preaviso ni "
             "indemnización."
@@ -240,7 +242,7 @@ ROLES = [
             "Apoyar en la toma de muestras y procesamiento de exámenes de laboratorio básicos.",
             "Alimentar, hidratar y limpiar jaulas de hospitalización conforme al protocolo de bioseguridad.",
             "Registrar y archivar historias clínicas bajo supervisión del médico veterinario.",
-            "Aplicar las normas de bioseguridad NT-01-2008, uso de EPP y manejo de residuos COVENIN 2747-93.",
+            "Aplicar las normas de bioseguridad las normas de bioseguridad aplicables, uso de EPP y manejo de residuos COVENIN 2747-93.",
             "Atender y orientar a los dueños o responsables de los pacientes en ausencia del veterinario.",
         ],
         "incluye_historias": True,
@@ -257,14 +259,14 @@ ROLES = [
         "duracion": "INDEFINIDA",
         "duracion_detalle": (
             "El presente contrato se celebra por tiempo indeterminado, conforme a lo "
-            "previsto en el artículo 65 de la LOTTT, en razón de la naturaleza permanente "
+            "en razón de la naturaleza permanente "
             "de las funciones del dog groomer en la peluquería canina. La relación "
             "laboral comenzará a regir a partir de la fecha de inicio de actividades del "
             "trabajador en la empresa."
         ),
         "prueba": "30 días continuos",
         "prueba_detalle": (
-            "Conforme al artículo 22 de la LOTTT, se establece un período de prueba de "
+            "Se establece un período de prueba de "
             "treinta (30) días continuos, durante el cual cualquiera de las partes "
             "podrá dar por terminada la relación laboral sin necesidad de preaviso ni "
             "indemnización."
@@ -273,7 +275,7 @@ ROLES = [
             "Realizar baños, cortes, peinados y arreglo estético de caninos y felinos conforme a las indicaciones del dueño y estándares de raza.",
             "Aplicar técnicas de manejo y bienestar animal para minimizar el estrés del paciente.",
             "Identificar y reportar al médico veterinario anomalías cutáneas, parasitarias o de salud general detectadas durante el servicio.",
-            "Mantener limpio y desinfectado el área de peluquería, bañeras, mesas y herramientas conforme a NT-01-2008.",
+            "Mantener limpio y desinfectado el área de peluquería, bañeras, mesas y herramientas conforme a las normas de bioseguridad aplicables.",
             "Llevar registro de servicios prestados y ficha de cada paciente.",
             "Velar por el buen estado de máquinas, tijeras, secadoras y demás herramientas de trabajo.",
             "Aplicar las normas de bioseguridad y uso de EPP (guantes, bata, calzado antideslizante).",
@@ -292,7 +294,7 @@ ROLES = [
         "footer_label": "Contrato Asistente de Ventas v3.0",
         "duracion": "3 MESES + PRÓRROGA",
         "duracion_detalle": (
-            "Conforme a los artículos 64 y 65 de la LOTTT, el presente contrato se celebra "
+            "El presente contrato se celebra "
             "por tiempo determinado de tres (3) meses, en razón de la naturaleza del cargo "
             "de asistente de ventas. El contrato podrá prorrogarse por períodos iguales "
             "hasta por el límite legal; vencido este plazo, la relación se considerará "
@@ -300,7 +302,7 @@ ROLES = [
         ),
         "prueba": "15 días continuos",
         "prueba_detalle": (
-            "Conforme al artículo 22 de la LOTTT, se establece un período de prueba de "
+            "Se establece un período de prueba de "
             "quince (15) días continuos, durante el cual cualquiera de las partes "
             "podrá dar por terminada la relación laboral sin necesidad de preaviso ni "
             "indemnización."
@@ -313,7 +315,7 @@ ROLES = [
             "Mantener el orden, limpieza y exhibición de la tienda.",
             "Informar al encargado de tienda sobre faltantes, mermas o devoluciones.",
             "Promocionar productos y servicios de la clínica, tienda y peluquería.",
-            "Cumplir las normas LOPCYMAT y LOPDP aplicables a su puesto.",
+            "Cumplir las normas la normativa de prevención aplicable y la normativa de protección de datos aplicable aplicables a su puesto.",
         ],
         "incluye_historias": False,
         "equipos_propios": None,
@@ -337,7 +339,7 @@ def add_party_intro(doc):
         "ser mayores de edad y hábiles para contratar, han convenido en celebrar el "
         "presente Contrato Individual de Trabajo, el cual se regirá por las siguientes "
         "cláusulas y por la Ley Orgánica del Trabajo, los Trabajadores y las Trabajadoras "
-        "(LOTTT) y demás normas aplicables:",
+        "y demás normas aplicables:",
         size=10, space_after=6)
 
 
@@ -365,7 +367,7 @@ def add_jornada_table(doc):
     rows = [
         ("Jornada diurna", "Lunes a sábado, de 8:00 a.m. a 4:00 p.m. (con 1 hora de descanso)"),
         ("Jornada mixta", "Lunes a sábado, de 12:00 m. a 8:00 p.m. (con 1 hora de descanso)"),
-        ("Horario asignado", "El horario específico será fijado por LA EMPRESA según las necesidades del servicio, conforme al artículo 171 LOTTT."),
+        ("Horario asignado", "El horario específico será fijado por LA EMPRESA según las necesidades del servicio, según las necesidades del servicio."),
     ]
     for i, (k, v) in enumerate(rows):
         c0 = tbl.rows[i].cells[0]
@@ -384,9 +386,11 @@ def add_salario_table(doc):
     WHITE = _RC(0xFF, 0xFF, 0xFF)
     headers = ["Concepto", "Monto mensual", "Naturaleza"]
     rows = [
-        ("Salario básico",          SALARIO_BASICO,   "Salarial (base prestaciones)"),
-        ("Bono de alimentación (Cestaticket)", CESTATICKET, "No salarial (Ley Programa Alimentación Trabajador)"),
-        ("Bono de transporte",      BONO_TRANSPORTO,  "No salarial"),
+        ("Salario básico",                          SALARIO_BASICO,        "Salarial (base prestaciones)"),
+        ("Bono de alimentación (Cestaticket)",      CESTATICKET,           "No salarial (Ley Programa Alimentación Trabajador)"),
+        ("Bono de transporte",                     BONO_TRANSPORTO,       "No salarial (Rembolso de gastos)"),
+        ("Bono de Buen Vivir",                      BONO_BUEN_VIVIR,       "No salarial (Asistencial)"),
+        ("Bono de Renta Telefónica",                BONO_RENTA_TELEFONICA, "No salarial (Rembolso de gastos)"),
     ]
     tbl = doc.add_table(rows=1+len(rows), cols=3)
     tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -430,8 +434,8 @@ def add_penalidades_table(doc):
          "Amonestación VERBAL por el jefe inmediato. Se deja constancia en el expediente del trabajador."),
         ("2", "GRAVE — Reincidencia de faltas leves, incumplimiento de protocolos de bioseguridad o atención al cliente, descuido de inventario.",
          "Amonestación ESCRITA firmada por el trabajador y la Directora Gerente. Se archiva en expediente."),
-        ("3", "MUY GRAVE — Faltas del artículo 79 LOTTT: robo, abandono del trabajo, indisciplina, acoso, revelación de secretos, daño intencional a bienes de la empresa o de pacientes.",
-         "RESCISIÓN del contrato por causa justificada conforme al artículo 79 LOTTT, sin derecho a prestaciones adicionales a las legalmente causadas."),
+        ("3", "MUY GRAVE — Faltas graves: robo, abandono del trabajo, indisciplina, acoso, revelación de secretos, daño intencional a bienes de la empresa o de pacientes.",
+         "RESCISIÓN del contrato por causa justificada conforme al artículo 79 la legislación aplicable, sin derecho a prestaciones adicionales a las legalmente causadas."),
     ]
     tbl = doc.add_table(rows=1+len(rows), cols=3)
     tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -469,7 +473,7 @@ def add_penalidades_table(doc):
     # Nota legal bajo la tabla
     add_para(doc,
         "Nota: ningún descuento salarial se aplicará sin la autorización previa del Inspector del "
-        "Trabajo, conforme al artículo 59 de la LOTTT. La vía disciplinaria no sustituye las "
+        "Trabajo, conforme a la legislación aplicable. La vía disciplinaria no sustituye las "
         "acciones civiles o penales que correspondan.",
         size=8, italic=True, color=GRAY_TEXT, space_after=6)
 
@@ -498,7 +502,7 @@ def add_clause_equipos(doc, equipos_propios=None):
         "Cuidar los equipos, instrumental y bienes de LA EMPRESA como un buen padre de familia, utilizandolos exclusivamente para los fines del trabajo.",
         "Reportar de inmediato cualquier daño, deterioro, falla o pérdida de los equipos a su superior jerárquico.",
         "No sustraer, trasladar a terceros, ni utilizar los equipos de LA EMPRESA para fines personales o externos.",
-        "Mantener los equipos en las áreas asignadas y en condiciones de higiene y bioseguridad conforme a la NT-01-2008.",
+        "Mantener los equipos en las áreas asignadas y en condiciones de higiene y bioseguridad conforme a la las normas de bioseguridad aplicables.",
         "Devolver todos los equipos, instrumental y bienes al término de la relación laboral, en el mismo estado en que los recibió, salvo el deterioro natural por su uso adecuado.",
     ]
     for o in obl_eq:
@@ -530,10 +534,10 @@ def add_clause_equipos(doc, equipos_propios=None):
     add_para(doc,
         "El incumplimiento de las obligaciones de esta cláusula, especialmente el daño "
         "intencional, sustracción o pérdida de equipos por negligencia grave, será "
-        "considerado falta grave conforme al artículo 79 de la LOTTT, sin perjuicio de "
+        "considerado falta grave conforme a la legislación aplicable, sin perjuicio de "
         "las acciones civiles y penales que correspondan. Los descuentos por pérdidas "
         "o daños se tramitarán con autorización previa del Inspector del Trabajo "
-        "conforme al artículo 59 de la LOTTT.",
+        "conforme a la legislación aplicable.",
         size=10, italic=True, color=GRAY_TEXT, space_after=6)
 
 
@@ -554,7 +558,7 @@ def add_clause_historias(doc):
         bold_lead="8.1  ")
     add_bullet(doc,
         "La información clínica de los pacientes y los datos de los clientes son confidenciales "
-        "y están protegidos por la LOPDP; su divulgación injustificada se considerará falta "
+        "y están protegidos por la la normativa de protección de datos aplicable; su divulgación injustificada se considerará falta "
         "grave conforme a la cláusula de penalidades.",
         bold_lead="8.2  ")
     add_bullet(doc,
@@ -630,14 +634,14 @@ def gen_contrato(role, out_dir):
     # ===== CLÁUSULA 4 — JORNADA Y HORARIO =====
     add_clause_header(doc, "4", "JORNADA Y HORARIO DE TRABAJO")
     add_para(doc,
-        "La jornada ordinaria de trabajo será la prevista en el artículo 173 de la LOTTT "
+        "La jornada ordinaria de trabajo será la prevista en el artículo 173 de la la legislación aplicable "
         "(jornada diurna, mixta o nocturna, según corresponda), con un (1) día de descanso "
-        "semanal, conforme al artículo 184 de la LOTTT:",
+        "semanal, conforme al artículo 184 de la la legislación aplicable:",
         size=10, space_after=4)
     add_jornada_table(doc)
     add_para(doc,
         "Las horas extraordinarias se pagarán con el recargo del 50 % (diurna) o del 95 % "
-        "(nocturna) sobre el salario normal, conforme a los artículos 198 y 199 de la LOTTT, "
+        "(nocturna) sobre el salario normal, conforme a los artículos 198 y 199 de la la legislación aplicable, "
         "y solo procederán cuando sean expresamente autorizadas por LA EMPRESA.",
         size=10, space_after=6)
 
@@ -645,18 +649,16 @@ def gen_contrato(role, out_dir):
     add_clause_header(doc, "5", "SALARIO, BONOS Y PRESTACIONES SOCIALES")
     add_para(doc,
         f"EL(LA) TRABAJADOR(A) devengará un salario básico mensual de {SALARIO_BASICO} "
-        f"(Salario Mínimo Nacional vigente conforme a la Gaceta Oficial N° 7.026 "
-        f"Extraordinaria de fecha 28 de abril de 2025). Adicionalmente, recibirá los "
-        f"siguientes conceptos:",
+        f"vigente conforme a la última Gaceta Oficial relacionada con dichos conceptos. "
+        f"Adicionalmente, recibirá los siguientes conceptos:",
         size=10, space_after=4)
     add_salario_table(doc)
     add_para(doc,
-        "Las prestaciones sociales se calcularán conforme a los artículos 142 y 143 de la "
-        "LOTTT, sobre la base del salario normal devengado. LA EMPRESA depositará las "
-        "prestaciones sociales mensualmente en la cuenta individual del trabajador, dentro "
-        "de los primeros cinco (5) días hábiles del mes siguiente, conforme al artículo 143 "
-        "de la LOTTT. Igualmente, LA EMPRESA cotizará al IVSS, FAOV, INCES y demás "
-        "organismos de seguridad social conforme a la ley.",
+        "Las prestaciones sociales se calcularán sobre la base del salario normal "
+        "devengado. LA EMPRESA depositará las prestaciones sociales mensualmente en la "
+        "cuenta individual del trabajador, dentro de los primeros cinco (5) días hábiles "
+        "del mes siguiente. Igualmente, LA EMPRESA cotizará al IVSS, FAOV, INCES y demás "
+        "organismos de seguridad social conforme a la legislación aplicable.",
         size=10, space_after=6)
 
     # ===== CLÁUSULA 6 — EQUIPOS, HERRAMIENTAS Y BIENES DE LA EMPRESA =====
@@ -668,7 +670,7 @@ def gen_contrato(role, out_dir):
     obl = [
         "Cumplir con las órdenes e instrucciones de LA EMPRESA en todo lo concerniente al trabajo.",
         "Concurrir al trabajo en el horario establecido y permanecer en él durante la jornada.",
-        "Observar las normas de bioseguridad NT-01-2008 y vigilancia médica NT-02-2008, así como el uso obligatorio del EPP asignado.",
+        "Observar las normas de bioseguridad las normas de bioseguridad aplicables y vigilancia médica las normas de vigilancia médica aplicables, así como el uso obligatorio del EPP asignado.",
         "Mantener en buen estado los equipos, herramientas, mobiliario e instalaciones de la empresa.",
         "Guardar secreto sobre la información técnica, comercial y administrativa de LA EMPRESA.",
         "Participar en los programas de capacitación y formación que LA EMPRESA establezca.",
@@ -695,7 +697,7 @@ def gen_contrato(role, out_dir):
         "El incumplimiento de las obligaciones aquí previstas se sancionará conforme al "
         "siguiente régimen disciplinario simplificado de tres (3) niveles, sin perjuicio de "
         "las previsiones del Reglamento Interno y de las causales de despido justificado "
-        "del artículo 79 de la LOTTT:",
+        "del artículo 79 de la la legislación aplicable:",
         size=10, space_after=4)
     add_penalidades_table(doc)
 
@@ -706,15 +708,15 @@ def gen_contrato(role, out_dir):
     else:
         next_clause = 9
 
-    # ===== CLÁUSULA FINAL — LOPDP =====
-    add_clause_header(doc, str(next_clause), "PROTECCIÓN DE DATOS PERSONALES (LOPDP)")
+    # ===== CLÁUSULA FINAL — la normativa de protección de datos aplicable =====
+    add_clause_header(doc, str(next_clause), "PROTECCIÓN DE DATOS PERSONALES (la normativa de protección de datos aplicable)")
     add_para(doc,
         "Conforme a la Ley Orgánica de Protección de Datos Personales (Decreto 1.419, "
         "Gaceta 6.210 Extraordinaria, 2014), EL(LA) TRABAJADOR(A) autoriza a LA EMPRESA "
         "para el tratamiento de sus datos personales (nombre, cédula, dirección, teléfono, "
         "datos biométricos, datos de salud) con finalidades de gestión laboral, nómina, "
         "cumplimiento de obligaciones ante IVSS, FAOV, INCES, PMSSO y demás organismos, así "
-        "como para el archivo laboral previsto en el artículo 183 de la LOTTT. Esta "
+        "como para el archivo laboral previsto en el artículo 183 de la la legislación aplicable. Esta "
         "autorización se mantendrá vigente durante la relación laboral y hasta por diez (10) "
         "años después de su terminación. EL(LA) TRABAJADOR(A) podrá ejercer sus derechos "
         "ARCO+ (Acceso, Rectificación, Cancelación, Oposición, Revocación, Información) "
@@ -726,7 +728,7 @@ def gen_contrato(role, out_dir):
     add_clause_header(doc, str(final_clause), "TERMINACIÓN, LITIGIOS Y DOMICILIO")
     add_para(doc,
         "El presente contrato terminará por las causales previstas en los artículos 71, 72 "
-        "y 79 de la LOTTT. Las controversias que se susciten con motivo de la interpretación "
+        "y 79 de la la legislación aplicable. Las controversias que se susciten con motivo de la interpretación "
         "o ejecución del presente contrato serán sustanciadas ante la Inspectoría del "
         "Trabajo con competencia en el Estado Miranda, o ante la jurisdicción laboral "
         "ordinaria. Para todos los efectos legales, las partes eligen como domicilio "

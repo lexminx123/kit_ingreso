@@ -445,8 +445,8 @@ function buildNotificacion(cliente, area) {
       },
     ]),
     b.note(
-      'Notificación de riesgos conforme al deber de información al trabajador ' +
-        '(LOPCYMAT). Se firma por duplicado.',
+      'Notificación de riesgos conforme al deber de información al trabajador. ' +
+        'Se firma por duplicado.',
     ),
   ];
 }

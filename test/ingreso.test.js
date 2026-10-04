@@ -149,6 +149,15 @@ test('los cargos 03x cubren los 8 cargos declarados en cliente.json', () => {
   assert.strictEqual(CLIENTE.cargos.length, 8, 'cliente.json declara 8 cargos');
 });
 
+test('las descripciones de cargo citan lottt_59_cargo', () => {
+  const bloques = require(path.join(RUTA_DOCS, '03a_funciones_ayudante_cocina.js')).blocks(CLIENTE);
+  const claves = bloques.filter((b) => b.type === 'legalRef').map((b) => b.key);
+  assert.ok(
+    claves.includes('lottt_59_cargo'),
+    'debe citar la denominación del cargo con descripción de servicios (art. 59 num. 3)',
+  );
+});
+
 test('04a cita lottt_142_garantia y lottt_143_deposito', () => {
   const bloques = require(path.join(RUTA_DOCS, '04a_prestaciones.js')).blocks(CLIENTE);
   const claves = bloques.filter((b) => b.type === 'legalRef').map((b) => b.key);

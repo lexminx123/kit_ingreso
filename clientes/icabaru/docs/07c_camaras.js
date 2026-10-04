@@ -39,6 +39,8 @@ module.exports = {
           'monitoreadas, la finalidad del sistema y las condiciones de su uso, y otorgo mi ' +
           'consentimiento para la captación y el tratamiento de las imágenes.',
       ),
+      b.legalRef('crbv_60_privacidad'),
+      b.legalRef('lopcymat_53_16_camaras'),
 
       b.chapter('Datos del titular'),
       b.field('Nombre y Apellido'),

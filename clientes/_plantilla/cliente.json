@@ -1,0 +1,47 @@
+{
+  "slug": "[COMPLETAR: slug-del-cliente]",
+  "marca": "[COMPLETAR: nombre comercial]",
+  "empresa": "[COMPLETAR: razón social]",
+  "rif": "[COMPLETAR: J-00000000-0]",
+  "domicilio": "[COMPLETAR: ciudad, estado]",
+  "domicilio_completo": "[COMPLETAR: dirección fiscal exacta]",
+  "representante": {
+    "nombre": "[COMPLETAR]",
+    "ci": "[COMPLETAR]",
+    "cargo": "[COMPLETAR]"
+  },
+  "actividad": "[COMPLETAR: actividad económica]",
+  "remuneracion": {
+    "total_usd": 0,
+    "periodicidad": "mensual",
+    "esquema": [
+      {
+        "concepto": "Salario Base",
+        "usd": 0,
+        "caracter": "SALARIAL",
+        "quincenal": 0
+      },
+      {
+        "concepto": "Bono de Alimentación (Cestaticket)",
+        "usd": 0,
+        "caracter": "SALARIAL",
+        "quincenal": 0
+      }
+    ],
+    "base_prestaciones_usd": 0
+  },
+  "jornada": {
+    "tipo": "diurna",
+    "horas_diarias": 8,
+    "horas_semanales": 40,
+    "detalle": "[COMPLETAR: horario por área y días de descanso]"
+  },
+  "cargos": [
+    {
+      "id": "[COMPLETAR: id-del-cargo]",
+      "nombre": "[COMPLETAR: nombre del cargo]",
+      "area": "[COMPLETAR: area]",
+      "sueldo_base_usd": 0
+    }
+  ]
+}

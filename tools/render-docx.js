@@ -23,6 +23,13 @@ const {
   LevelFormat,
   convertMillimetersToTwip,
 } = require('docx');
+const JSZip = require('jszip');
+
+// Fecha fija para que el .docx sea byte-reproducible. El paquete `docx` sella
+// `dcterms:created`/`dcterms:modified` con la fecha actual y no expone opción
+// para fijarla, así que la normalizamos al vuelo (ver `normalizarDocx`).
+const FECHA_FIJA = new Date('2026-01-01T00:00:00.000Z');
+const FECHA_ISO = '2026-01-01T00:00:00Z';
 
 // Tamaño A4 en twips (1 mm ≈ 56.7 twips).
 const A4 = {
@@ -288,6 +295,55 @@ function buildDocument(blocks, options = {}) {
 }
 
 /**
+ * Normaliza el .docx para que sea byte-reproducible:
+ *  1. fija las fechas de creación/modificación de las core properties;
+ *  2. reconstruye el ZIP con fechas constantes y orden estable (evita que
+ *     jszip cree carpetas implícitas selladas con la fecha actual).
+ * @param {Buffer} buffer .docx crudo devuelto por `Packer`.
+ * @returns {Promise<Buffer>} .docx normalizado.
+ */
+async function normalizarDocx(buffer) {
+  const origen = await JSZip.loadAsync(buffer);
+
+  const core = origen.file('docProps/core.xml');
+  if (core) {
+    let xml = await core.async('string');
+    xml = xml.replace(
+      /<dcterms:created([^>]*)>[^<]*<\/dcterms:created>/,
+      `<dcterms:created$1>${FECHA_ISO}</dcterms:created>`,
+    );
+    xml = xml.replace(
+      /<dcterms:modified([^>]*)>[^<]*<\/dcterms:modified>/,
+      `<dcterms:modified$1>${FECHA_ISO}</dcterms:modified>`,
+    );
+    origen.file('docProps/core.xml', xml);
+  }
+
+  const destino = new JSZip();
+  for (const nombre of Object.keys(origen.files)) {
+    const entrada = origen.files[nombre];
+    if (entrada.dir) {
+      destino.file(nombre, null, { dir: true, date: FECHA_FIJA, createFolders: false });
+      continue;
+    }
+    const datos = await entrada.async('nodebuffer');
+    destino.file(nombre, datos, {
+      date: FECHA_FIJA,
+      createFolders: false,
+      compression: 'DEFLATE',
+      compressionOptions: { level: 9 },
+    });
+  }
+
+  return destino.generateAsync({
+    type: 'nodebuffer',
+    compression: 'DEFLATE',
+    compressionOptions: { level: 9 },
+    platform: 'DOS',
+  });
+}
+
+/**
  * Renderiza la lista de bloques a un Buffer .docx.
  * @param {Array} blocks
  * @param {{empresa?:string}} [options]
@@ -295,7 +351,8 @@ function buildDocument(blocks, options = {}) {
  */
 async function renderDocx(blocks, options = {}) {
   const doc = buildDocument(blocks, options);
-  return Packer.toBuffer(doc);
+  const crudo = await Packer.toBuffer(doc);
+  return normalizarDocx(crudo);
 }
 
-module.exports = { buildDocument, renderDocx };
+module.exports = { buildDocument, renderDocx, normalizarDocx };

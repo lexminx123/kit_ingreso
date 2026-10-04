@@ -61,6 +61,21 @@ test('el registro legal incorpora las claves corregidas del Ticket #9', () => {
   }
 });
 
+// Deuda técnica (higiene legal): intimidad, denominación del cargo y cámaras.
+const CLAVES_HIGIENE = ['crbv_60_privacidad', 'lottt_59_cargo', 'lopcymat_53_16_camaras'];
+
+test('el registro legal incorpora las claves de higiene legal', () => {
+  for (const clave of CLAVES_HIGIENE) {
+    assert.ok(clave in LEGAL, `falta la clave "${clave}"`);
+  }
+});
+
+test('las claves de higiene legal apuntan al artículo correcto', () => {
+  assert.strictEqual(LEGAL.crbv_60_privacidad.articulo, '60');
+  assert.strictEqual(LEGAL.lottt_59_cargo.articulo, '59');
+  assert.strictEqual(LEGAL.lopcymat_53_16_camaras.articulo, '53');
+});
+
 // Los artículos de las claves LOPCYMAT nuevas deben ser los correctos.
 test('las claves LOPCYMAT nuevas apuntan al artículo correcto', () => {
   assert.strictEqual(LEGAL.lopcymat_56_notif_riesgos.articulo, '56');

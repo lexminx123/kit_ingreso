@@ -33,14 +33,14 @@ const MODULOS = [
     id: 'autorizacion_imagen',
     dir: '07_AUTORIZACIONES',
     filename: 'Autorizacion_Imagen_Redes_Sociales',
-    legales: [],
+    legales: ['crbv_60_privacidad'],
   },
   {
     archivo: '07c_camaras.js',
     id: 'autorizacion_videovigilancia',
     dir: '07_AUTORIZACIONES',
     filename: 'Autorizacion_Videovigilancia',
-    legales: [],
+    legales: ['crbv_60_privacidad', 'lopcymat_53_16_camaras'],
   },
   {
     archivo: '08a_reglamento_interno.js',

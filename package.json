@@ -6,13 +6,12 @@
   "private": true,
   "scripts": {
     "test": "node --test",
-    "build:carta": "node tools/build.js --doc carta"
+    "build:carta": "node tools/build.js --doc carta",
+    "build:icabaru": "node tools/build.js --all"
   },
   "dependencies": {
     "docx": "^9.5.1",
+    "jszip": "^3.10.1",
     "pdf-lib": "^1.17.1"
-  },
-  "devDependencies": {
-    "jszip": "^3.10.1"
   }
 }

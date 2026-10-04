@@ -358,7 +358,7 @@ function buildContrato(cliente, cargo) {
     b.chapter('DÉCIMA NOVENA. IRRENUNCIABILIDAD DE DERECHOS'),
     b.p(
       'Ninguna de las disposiciones de este contrato podrá interpretarse en perjuicio de los ' +
-        'derechos mínimos e irrenunciables que la Constitución y las leyes reconocen a ' +
+        'derechos mínimos e irrenunciables que el ordenamiento jurídico reconoce a ' +
         'EL(LA) TRABAJADOR(A).',
     ),
     b.legalRef('crbv_89_irrenunciabilidad'),

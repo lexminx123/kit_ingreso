@@ -80,3 +80,19 @@ test('renderiza acentos sin lanzar y produce un PDF válido que se reabre', asyn
 
   fs.rmSync(dir, { recursive: true, force: true });
 });
+
+// Reproducibilidad: el PDF fija CreationDate/ModDate (ver tools/render-pdf.js).
+test('el PDF sella CreationDate/ModDate constantes', async () => {
+  const bytes = await renderPdf([blocks.p('Repro')], { empresa: 'X' });
+  const pdf = await PDFDocument.load(bytes, { updateMetadata: false });
+  const fija = new Date('2026-01-01T00:00:00.000Z').toISOString();
+  assert.strictEqual(pdf.getCreationDate().toISOString(), fija);
+  assert.strictEqual(pdf.getModificationDate().toISOString(), fija);
+});
+
+test('dos PDF del mismo contenido son byte-idénticos', async () => {
+  const definicion = [blocks.p('Mismo contenido.')];
+  const a = await renderPdf(definicion, { empresa: 'X' });
+  const b = await renderPdf(definicion, { empresa: 'X' });
+  assert.deepStrictEqual(Array.from(a), Array.from(b));
+});

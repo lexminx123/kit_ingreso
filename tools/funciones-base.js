@@ -93,6 +93,7 @@ function descripcionFunciones(cargo, contenido, opciones = {}) {
       { label: 'Sueldo base (USD)', value: String(cargo.sueldo_base_usd) },
       { label: 'Jornada', value: 'Diurna, 8 horas diarias / 40 horas semanales' },
     ]),
+    b.legalRef('lottt_59_cargo'),
   ];
 
   if (contenido.proposito) {

@@ -39,6 +39,7 @@ module.exports = {
           'videos captados en el desarrollo de mis actividades laborales, conforme al alcance ' +
           'y a los límites establecidos en esta autorización.',
       ),
+      b.legalRef('crbv_60_privacidad'),
 
       b.chapter('Datos del titular'),
       b.field('Nombre y Apellido'),

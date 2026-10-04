@@ -109,6 +109,17 @@ test('buildNotificacion define EPP y constancia de firma del trabajador', () => 
   assert.match(textoDe(bloques).toLowerCase(), /guante/, 'debe listar EPP');
 });
 
+test('buildNotificacion no escribe el nombre de la ley a mano en el texto', () => {
+  const bloques = buildNotificacion(cliente, 'cocina');
+  const visibles = bloques
+    .map((b) => (b.type === 'legalRef' ? (b.ref && b.ref.texto) || '' : b.text || ''))
+    .join(' ');
+  assert.ok(
+    !/LOPCYMAT/.test(visibles),
+    'el texto renderizado no debe nombrar la LOPCYMAT a mano (usar legalRef)',
+  );
+});
+
 // --- Módulos 05_* -----------------------------------------------------------
 
 test('existen al menos los 10 módulos del ticket (7 notificaciones + EPP + examen + cartilla)', () => {

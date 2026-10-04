@@ -10,6 +10,10 @@
 const { PDFDocument, rgb } = require('pdf-lib');
 const { PdfLayout } = require('./layout-pdf.js');
 
+// Fecha fija para que el PDF sea byte-reproducible (pdf-lib sella la fecha
+// actual en /CreationDate y /ModDate si no se indica otra).
+const FECHA_FIJA = new Date('2026-01-01T00:00:00.000Z');
+
 /** Normaliza un texto a una clave ASCII en minúsculas y con guiones bajos. */
 function slug(texto) {
   return String(texto)
@@ -118,6 +122,9 @@ async function renderPdf(blocks, options = {}) {
   }
 
   form.updateFieldAppearances(layout.fuente);
+
+  doc.setCreationDate(FECHA_FIJA);
+  doc.setModificationDate(FECHA_FIJA);
 
   return doc.save();
 }

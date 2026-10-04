@@ -156,6 +156,17 @@ test('el contrato no incluye período de prueba ni cita la clave inventada', () 
   assert.ok(!texto.includes('periodo de prueba'), 'no debe existir la cláusula de período de prueba');
 });
 
+test('el contrato no escribe nombres de leyes a mano en las cláusulas', () => {
+  const bloques = buildContrato(CLIENTE, CLIENTE.cargos[0]);
+  const visibles = bloques
+    .map((b) => (b.type === 'legalRef' ? (b.ref && b.ref.texto) || '' : b.text || ''))
+    .join(' ');
+  assert.ok(
+    !/Constitución/.test(visibles),
+    'el texto renderizado no debe nombrar la Constitución a mano (usar legalRef)',
+  );
+});
+
 // La CLI real, en copia aislada, genera los .docx/.pdf de los 8 contratos.
 test('node tools/build.js --all genera los 8 contratos (.docx y .pdf)', () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'kit-contrato-'));

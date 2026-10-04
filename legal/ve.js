@@ -58,6 +58,12 @@ const ENTRADAS = {
     'Prórroga del contrato de trabajo por tiempo determinado.',
   ),
   lottt_63_obra: articulo(LOTTT, '63', 'Contrato para una obra determinada.'),
+  lottt_59_cargo: articulo(
+    LOTTT,
+    '59',
+    'Contenido obligatorio del contrato escrito: incluye la denominación del puesto de ' +
+      'trabajo o cargo con una descripción de los servicios a prestar (num. 3).',
+  ),
   lottt_79_despido: articulo(LOTTT, '79', 'Causas justificadas de despido.'),
   lottt_81_preaviso: articulo(LOTTT, '81', 'Preaviso por retiro.'),
   lottt_104_salario: articulo(LOTTT, '104', 'Definición de salario.'),
@@ -130,6 +136,12 @@ const ENTRADAS = {
     '53',
     'Confidencialidad de los datos personales de salud (num. 11).',
   ),
+  lopcymat_53_16_camaras: articulo(
+    LOPCYMAT,
+    '53',
+    'Derecho a la privacidad de la correspondencia y las comunicaciones y al libre acceso ' +
+      'a los datos e informaciones referidos a la propia persona (num. 16).',
+  ),
   lopcymat_46_comite: articulo(
     LOPCYMAT,
     '46',
@@ -157,6 +169,12 @@ const ENTRADAS = {
     CRBV,
     '28',
     'Acceso a la información y habeas data (protección de datos personales).',
+  ),
+  crbv_60_privacidad: articulo(
+    CRBV,
+    '60',
+    'Protección del honor, la vida privada, la intimidad, la propia imagen, la ' +
+      'confidencialidad y la reputación.',
   ),
   crbv_87_trabajo: articulo(CRBV, '87', 'Derecho al trabajo.'),
   crbv_89_irrenunciabilidad: articulo(

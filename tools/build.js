@@ -15,11 +15,15 @@
 
 const fs = require('fs');
 const path = require('path');
+const { PDFDocument } = require('pdf-lib');
 const { renderDocx } = require('./render-docx.js');
 const { renderPdf } = require('./render-pdf.js');
 
 const ROOT = path.resolve(__dirname, '..');
 const CLIENTES = path.join(ROOT, 'clientes');
+
+// Fecha fija del manifiesto para que el archivo sea byte-reproducible.
+const FECHA_MANIFIESTO = new Date('2026-01-01T00:00:00.000Z');
 
 // Documentos legacy con metadatos explícitos (bloques en formato arreglo).
 const DOCS = {
@@ -162,6 +166,64 @@ async function construir(trabajo, opts = {}) {
   return { destinoDocx, destinoPdf, bytesDocx: buffer.length, bytesPdf: pdf.length };
 }
 
+/**
+ * Nombres de los campos AcroForm de un PDF ya generado.
+ * @param {string} rutaPdf
+ * @returns {Promise<string[]>}
+ */
+async function camposDePdf(rutaPdf) {
+  const pdf = await PDFDocument.load(fs.readFileSync(rutaPdf), { updateMetadata: false });
+  return pdf.getForm().getFields().map((f) => f.getName());
+}
+
+/**
+ * Construye el manifiesto de campos de un cliente a partir de sus resultados.
+ * @param {string} slug
+ * @param {Array<{id:string, dir:string, filename:string, destinoPdf:string}>} resultados
+ */
+async function construirManifiesto(slug, resultados) {
+  const documentos = [];
+  for (const r of resultados) {
+    documentos.push({
+      id: r.id,
+      carpeta: r.dir,
+      archivo: r.filename,
+      docx: `${r.dir}/${r.filename}.docx`,
+      pdf: `${r.dir}/${r.filename}.pdf`,
+      campos: await camposDePdf(r.destinoPdf),
+    });
+  }
+  documentos.sort((a, b) => {
+    if (a.carpeta !== b.carpeta) return a.carpeta < b.carpeta ? -1 : 1;
+    if (a.archivo !== b.archivo) return a.archivo < b.archivo ? -1 : 1;
+    return 0;
+  });
+  return { cliente: slug, generado: FECHA_MANIFIESTO.toISOString(), documentos };
+}
+
+/**
+ * Escribe clientes/<slug>/entregables/_manifest.json por cada cliente tocado.
+ * @param {string} baseClientes
+ * @param {Array<object>} resultados  Resultados de construir() con slug/id/dir/filename.
+ */
+async function escribirManifiesto(baseClientes, resultados) {
+  const porSlug = new Map();
+  for (const r of resultados) {
+    if (!porSlug.has(r.slug)) porSlug.set(r.slug, []);
+    porSlug.get(r.slug).push(r);
+  }
+
+  const escritos = [];
+  for (const [slug, res] of porSlug) {
+    const manifiesto = await construirManifiesto(slug, res);
+    const destino = path.join(baseClientes, slug, 'entregables', '_manifest.json');
+    fs.mkdirSync(path.dirname(destino), { recursive: true });
+    fs.writeFileSync(destino, `${JSON.stringify(manifiesto, null, 2)}\n`);
+    escritos.push({ slug, destino, documentos: manifiesto.documentos.length });
+  }
+  return escritos;
+}
+
 async function main(argv) {
   const args = parseArgs(argv);
   const lista = trabajos();
@@ -172,8 +234,20 @@ async function main(argv) {
       process.exitCode = 1;
       return;
     }
+    const resultados = [];
     for (const trabajo of lista) {
-      await construir(trabajo);
+      const res = await construir(trabajo);
+      resultados.push({
+        slug: trabajo.slug,
+        id: trabajo.id,
+        dir: trabajo.dir,
+        filename: trabajo.filename,
+        ...res,
+      });
+    }
+    const manifiestos = await escribirManifiesto(CLIENTES, resultados);
+    for (const m of manifiestos) {
+      console.log(`OK manifiesto ${m.slug} -> ${m.destino} (${m.documentos} documentos)`);
     }
     return;
   }
@@ -202,4 +276,14 @@ if (require.main === module) {
   });
 }
 
-module.exports = { main, DOCS, resolverSalidas, descubrirModulos, trabajos, construir };
+module.exports = {
+  main,
+  DOCS,
+  resolverSalidas,
+  descubrirModulos,
+  trabajos,
+  construir,
+  camposDePdf,
+  construirManifiesto,
+  escribirManifiesto,
+};

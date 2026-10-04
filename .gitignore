@@ -19,6 +19,9 @@ __pycache__/
 ~$*.xlsx
 ~$*.pptx
 
+# Node
+node_modules/
+
 # Entorno virtual
 venv/
 .venv/

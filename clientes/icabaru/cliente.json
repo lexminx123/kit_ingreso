@@ -1,0 +1,107 @@
+{
+  "slug": "icabaru",
+  "marca": "ICABARU",
+  "empresa": "PARRILLA Y LUNCHERÍA ICABARU SRL",
+  "rif": "J-30079219-0",
+  "domicilio": "Los Teques, Estado Miranda",
+  "domicilio_completo": "[COMPLETAR: dirección fiscal exacta]",
+  "representante": {
+    "nombre": "[COMPLETAR]",
+    "ci": "[COMPLETAR]",
+    "cargo": "[COMPLETAR]"
+  },
+  "actividad": "Restaurante / parrilla (servicio de comidas y bebidas)",
+  "remuneracion": {
+    "total_usd": 240,
+    "periodicidad": "mensual",
+    "esquema": [
+      {
+        "concepto": "Salario Base",
+        "usd": 40,
+        "caracter": "SALARIAL",
+        "quincenal": 20
+      },
+      {
+        "concepto": "Bono de Alimentación (Cestaticket)",
+        "usd": 80,
+        "caracter": "SALARIAL",
+        "quincenal": 40
+      },
+      {
+        "concepto": "Bono de Buen Vivir",
+        "usd": 40,
+        "caracter": "NO SALARIAL",
+        "quincenal": 20
+      },
+      {
+        "concepto": "Bono de Transporte",
+        "usd": 40,
+        "caracter": "NO SALARIAL",
+        "quincenal": 20
+      },
+      {
+        "concepto": "Otros beneficios no salariales",
+        "usd": 40,
+        "caracter": "NO SALARIAL",
+        "quincenal": 20
+      }
+    ],
+    "base_prestaciones_usd": 120
+  },
+  "jornada": {
+    "tipo": "diurna",
+    "horas_diarias": 8,
+    "horas_semanales": 40,
+    "detalle": "[COMPLETAR: horario por área y días de descanso]"
+  },
+  "cargos": [
+    {
+      "id": "ayudante_cocina",
+      "nombre": "AYUDANTE DE COCINA",
+      "area": "cocina",
+      "sueldo_base_usd": 42
+    },
+    {
+      "id": "stewart",
+      "nombre": "STEWART (LAVAPLATOS)",
+      "area": "cocina",
+      "sueldo_base_usd": 40
+    },
+    {
+      "id": "mesonero",
+      "nombre": "MESONERO / ATENDEDOR",
+      "area": "salon",
+      "sueldo_base_usd": 42
+    },
+    {
+      "id": "cajero",
+      "nombre": "CAJERO",
+      "area": "caja",
+      "sueldo_base_usd": 45
+    },
+    {
+      "id": "bartender",
+      "nombre": "BARTENDER",
+      "area": "barra",
+      "sueldo_base_usd": 50
+    },
+    {
+      "id": "parrillero",
+      "nombre": "PARRILLERO",
+      "area": "parrilla",
+      "sueldo_base_usd": 60
+    },
+    {
+      "id": "supervisor_salon",
+      "nombre": "SUPERVISOR DE SALÓN",
+      "area": "salon",
+      "sueldo_base_usd": 70
+    },
+    {
+      "id": "administrador",
+      "nombre": "ADMINISTRADOR",
+      "area": "administracion",
+      "sueldo_base_usd": 100
+    }
+  ]
+}

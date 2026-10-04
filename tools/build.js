@@ -1,11 +1,17 @@
 'use strict';
 
-// CLI para generar un .docx y un .pdf a partir de una definición de bloques.
+// CLI para generar .docx y .pdf a partir de definiciones de bloques.
 //
-//   node tools/build.js --doc carta
+//   node tools/build.js --all            # descubre y construye todos los módulos
+//   node tools/build.js --doc carta      # construye un documento concreto
 //
-// El registro DOCS mapea el nombre lógico del documento con su módulo de
-// definición (bloques) y las rutas de salida dentro del repositorio.
+// Auto-descubrimiento: cada archivo clientes/<slug>/docs/*.js que exporte
+//   { id, dir, filename, blocks(cliente) }
+// se construye a clientes/<slug>/entregables/<dir>/<filename>.{docx,pdf}.
+// Otros tickets añaden documentos sin tocar este archivo.
+//
+// Los documentos legacy (bloques como arreglo, p. ej. carta) se conservan en
+// DOCS para `--doc <id>` y también entran en `--all`.
 
 const fs = require('fs');
 const path = require('path');
@@ -13,64 +19,180 @@ const { renderDocx } = require('./render-docx.js');
 const { renderPdf } = require('./render-pdf.js');
 
 const ROOT = path.resolve(__dirname, '..');
+const CLIENTES = path.join(ROOT, 'clientes');
 
+// Documentos legacy con metadatos explícitos (bloques en formato arreglo).
 const DOCS = {
   carta: {
+    slug: 'icabaru',
     modulo: '../clientes/icabaru/docs/carta.js',
-    salida: 'clientes/icabaru/entregables/09_CIERRE/Carta_Aceptacion_General.docx',
-    salidaPdf: 'clientes/icabaru/entregables/09_CIERRE/Carta_Aceptacion_General.pdf',
+    dir: '09_CIERRE',
+    filename: 'Carta_Aceptacion_General',
   },
 };
 
 function parseArgs(argv) {
-  const args = { doc: null, out: null, outPdf: null };
+  const args = { all: false, doc: null, out: null, outPdf: null };
   for (let i = 0; i < argv.length; i += 1) {
-    if (argv[i] === '--doc') args.doc = argv[++i];
-    else if (argv[i] === '--out') args.out = argv[++i];
-    else if (argv[i] === '--out-pdf') args.outPdf = argv[++i];
+    const actual = argv[i];
+    if (actual === '--all') args.all = true;
+    else if (actual === '--doc') args.doc = argv[++i];
+    else if (actual === '--out') args.out = argv[++i];
+    else if (actual === '--out-pdf') args.outPdf = argv[++i];
   }
   return args;
 }
 
+/** Rutas absolutas de salida de un documento dentro de un cliente. */
+function resolverSalidas(baseClientes, slug, dir, filename) {
+  const base = path.join(baseClientes, slug, 'entregables', dir);
+  return {
+    docx: path.join(base, `${filename}.docx`),
+    pdf: path.join(base, `${filename}.pdf`),
+  };
+}
+
+/**
+ * Descubre módulos de documento en clientes/<slug>/docs/*.js.
+ * @param {string} [baseClientes] Directorio raíz de clientes.
+ * @returns {Array<{slug:string, modulo:string, id:string, dir:string, filename:string, definicion:object}>}
+ */
+function descubrirModulos(baseClientes = CLIENTES) {
+  const encontrados = [];
+  if (!fs.existsSync(baseClientes)) return encontrados;
+
+  for (const slug of fs.readdirSync(baseClientes)) {
+    const docsDir = path.join(baseClientes, slug, 'docs');
+    if (!fs.existsSync(docsDir) || !fs.statSync(docsDir).isDirectory()) continue;
+
+    for (const archivo of fs.readdirSync(docsDir)) {
+      if (!archivo.endsWith('.js')) continue;
+      const modulo = path.join(docsDir, archivo);
+      let definicion;
+      try {
+        definicion = require(modulo);
+      } catch (err) {
+        throw new Error(`No se pudo cargar "${modulo}": ${err.message}`);
+      }
+      // Solo módulos declarativos con blocks() participan del auto-descubrimiento.
+      if (!definicion || typeof definicion.blocks !== 'function') continue;
+      if (!definicion.id || !definicion.dir || !definicion.filename) {
+        throw new Error(`El módulo "${modulo}" debe exportar { id, dir, filename, blocks }.`);
+      }
+      encontrados.push({
+        slug,
+        modulo,
+        id: definicion.id,
+        dir: definicion.dir,
+        filename: definicion.filename,
+        definicion,
+      });
+    }
+  }
+
+  return encontrados;
+}
+
+/**
+ * Lista de trabajos: módulos descubiertos + documentos legacy de DOCS.
+ * @param {string} [rootDir] Raíz del repositorio.
+ */
+function trabajos(rootDir = ROOT) {
+  const lista = [];
+  const vistos = new Set();
+
+  for (const modulo of descubrirModulos(path.join(rootDir, 'clientes'))) {
+    if (vistos.has(modulo.id)) continue;
+    vistos.add(modulo.id);
+    lista.push({ ...modulo, legacy: false });
+  }
+
+  for (const [id, doc] of Object.entries(DOCS)) {
+    if (vistos.has(id)) continue;
+    vistos.add(id);
+    lista.push({
+      id,
+      slug: doc.slug,
+      modulo: path.resolve(rootDir, 'tools', doc.modulo),
+      dir: doc.dir,
+      filename: doc.filename,
+      definicion: null,
+      legacy: true,
+    });
+  }
+
+  return lista;
+}
+
+/**
+ * Construye un trabajo en .docx y .pdf.
+ * @param {object} trabajo
+ * @param {{baseClientes?:string, out?:string, outPdf?:string}} [opts]
+ */
+async function construir(trabajo, opts = {}) {
+  const definicion = trabajo.definicion || require(trabajo.modulo);
+  const bloques =
+    typeof definicion.blocks === 'function'
+      ? definicion.blocks({ slug: trabajo.slug })
+      : definicion.blocks;
+
+  if (!Array.isArray(bloques)) {
+    throw new Error(`El documento "${trabajo.id}" no produce una lista de bloques.`);
+  }
+
+  const salidas = resolverSalidas(
+    opts.baseClientes || CLIENTES,
+    trabajo.slug,
+    trabajo.dir,
+    trabajo.filename,
+  );
+  const destinoDocx = path.resolve(opts.out || salidas.docx);
+  const destinoPdf = path.resolve(opts.outPdf || salidas.pdf);
+
+  const buffer = await renderDocx(bloques, { empresa: definicion.empresa });
+  fs.mkdirSync(path.dirname(destinoDocx), { recursive: true });
+  fs.writeFileSync(destinoDocx, buffer);
+  console.log(`OK ${trabajo.id} -> ${destinoDocx} (${buffer.length} bytes)`);
+
+  const pdf = await renderPdf(bloques, { empresa: definicion.empresa });
+  fs.mkdirSync(path.dirname(destinoPdf), { recursive: true });
+  fs.writeFileSync(destinoPdf, pdf);
+  console.log(`OK ${trabajo.id} -> ${destinoPdf} (${pdf.length} bytes)`);
+
+  return { destinoDocx, destinoPdf, bytesDocx: buffer.length, bytesPdf: pdf.length };
+}
+
 async function main(argv) {
   const args = parseArgs(argv);
+  const lista = trabajos();
 
-  if (!args.doc || !DOCS[args.doc]) {
-    const disponibles = Object.keys(DOCS).join(', ');
-    console.error(`Uso: node tools/build.js --doc <nombre>`);
-    console.error(`Documentos disponibles: ${disponibles}`);
-    process.exitCode = 1;
+  if (args.all) {
+    if (lista.length === 0) {
+      console.error('No hay módulos de documento para construir.');
+      process.exitCode = 1;
+      return;
+    }
+    for (const trabajo of lista) {
+      await construir(trabajo);
+    }
     return;
   }
 
-  const entrada = DOCS[args.doc];
-  const definicion = require(path.resolve(__dirname, entrada.modulo));
-  const blocks = Array.isArray(definicion) ? definicion : definicion.blocks;
-
-  if (!Array.isArray(blocks)) {
-    throw new Error(`La definición "${args.doc}" no exporta una lista de bloques.`);
+  if (args.doc) {
+    const trabajo = lista.find((t) => t.id === args.doc);
+    if (!trabajo) {
+      console.error(`Documento desconocido: ${args.doc}`);
+      console.error(`Disponibles: ${lista.map((t) => t.id).join(', ') || '(ninguno)'}`);
+      process.exitCode = 1;
+      return;
+    }
+    await construir(trabajo, { out: args.out, outPdf: args.outPdf });
+    return;
   }
 
-  const destinoDocx = path.resolve(ROOT, args.out || entrada.salida);
-
-  const buffer = await renderDocx(blocks, { empresa: definicion.empresa });
-  fs.mkdirSync(path.dirname(destinoDocx), { recursive: true });
-  fs.writeFileSync(destinoDocx, buffer);
-
-  console.log(`OK ${args.doc} -> ${destinoDocx} (${buffer.length} bytes)`);
-
-  // Mismo documento en PDF con formulario rellenable (AcroForm).
-  const destinoPdf = args.outPdf
-    ? path.resolve(ROOT, args.outPdf)
-    : args.out
-      ? destinoDocx.replace(/\.docx$/i, '.pdf')
-      : path.resolve(ROOT, entrada.salidaPdf);
-
-  const pdf = await renderPdf(blocks, { empresa: definicion.empresa });
-  fs.mkdirSync(path.dirname(destinoPdf), { recursive: true });
-  fs.writeFileSync(destinoPdf, pdf);
-
-  console.log(`OK ${args.doc} -> ${destinoPdf} (${pdf.length} bytes)`);
+  console.error('Uso: node tools/build.js --all | --doc <nombre>');
+  console.error(`Documentos disponibles: ${lista.map((t) => t.id).join(', ') || '(ninguno)'}`);
+  process.exitCode = 1;
 }
 
 if (require.main === module) {
@@ -80,4 +202,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { main, DOCS };
+module.exports = { main, DOCS, resolverSalidas, descubrirModulos, trabajos, construir };

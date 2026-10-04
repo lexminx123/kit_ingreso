@@ -98,16 +98,51 @@ function pageBreak() {
 }
 
 /**
+ * Devuelve la entrada del registro legal o lanza si la clave no existe:
+ * nunca se inventan citas.
+ */
+function entradaLegal(key) {
+  if (!Object.prototype.hasOwnProperty.call(LEGAL, key)) {
+    throw new Error(`La clave legal "${key}" no existe en legal/ve.js.`);
+  }
+  return LEGAL[key];
+}
+
+/**
  * Referencia legal verificada contra legal/ve.js.
  * Lanza error si la clave no existe: nunca se inventan citas.
  */
 function legalRef(key) {
-  if (!Object.prototype.hasOwnProperty.call(LEGAL, key)) {
-    throw new Error(
-      `legalRef: la clave "${key}" no existe en legal/ve.js (registro pendiente, Ticket #3).`,
-    );
+  return { type: 'legalRef', key, ref: entradaLegal(key) };
+}
+
+// Sigla corta por norma, para citas dentro de párrafos.
+const SIGLAS = [
+  [/LOPCYMAT/, 'LOPCYMAT'],
+  [/LOTTT|Trabajadores y las Trabajadoras/, 'LOTTT'],
+  [/Constitución/, 'CRBV'],
+  [/Alimentación/, 'LAT'],
+  [/Delitos Informáticos/, 'Ley de Delitos Informáticos'],
+  [/Seguridad Social/, 'LOSSS'],
+  [/Vivienda y Hábitat/, 'Ley de Vivienda y Hábitat'],
+];
+
+/** Sigla corta de la norma a partir de su nombre completo. */
+function siglaDe(ley) {
+  for (const [patron, sigla] of SIGLAS) {
+    if (patron.test(ley)) return sigla;
   }
-  return { type: 'legalRef', key, ref: LEGAL[key] };
+  return ley;
+}
+
+/**
+ * Cita corta de una clave legal, para incrustar dentro de un párrafo.
+ * Ej: legalRefText('lottt_60_modalidades') -> "Art. 60 LOTTT".
+ */
+function legalRefText(key) {
+  const entrada = entradaLegal(key);
+  const sigla = siglaDe(entrada.ley);
+  return entrada.articulo ? `Art. ${entrada.articulo} ${sigla}` : sigla;
 }
 
 module.exports = {
@@ -125,4 +160,5 @@ module.exports = {
   signatureBlock,
   pageBreak,
   legalRef,
+  legalRefText,
 };

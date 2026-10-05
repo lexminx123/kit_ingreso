@@ -7,7 +7,8 @@
   "scripts": {
     "test": "node --test",
     "build:carta": "node tools/build.js --doc carta",
-    "build:icabaru": "node tools/build.js --all"
+    "build:icabaru": "node tools/build.js --all",
+    "nuevo-cliente": "node tools/nuevo-cliente.js"
   },
   "dependencies": {
     "docx": "^9.5.1",

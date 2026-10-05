@@ -96,7 +96,7 @@ for (const modulo of MODULOS) {
 
 // --- Manifiesto de campos para llenado automático ---------------------------
 
-test('[faltantes] node tools/build.js --all genera _manifest.json con los 43 documentos', () => {
+test('[faltantes] node tools/build.js --all genera _manifest.json con los 53 documentos', () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'kit-faltantes-'));
   try {
     for (const dir of ['tools', 'legal', 'clientes']) {
@@ -118,7 +118,7 @@ test('[faltantes] node tools/build.js --all genera _manifest.json con los 43 doc
     assert.strictEqual(manifiesto.cliente, 'icabaru');
     assert.ok(manifiesto.generado, 'debe declarar una fecha de generación');
     assert.ok(Array.isArray(manifiesto.documentos), 'documentos debe ser un arreglo');
-    assert.strictEqual(manifiesto.documentos.length, 43, 'deben listarse 43 documentos');
+    assert.strictEqual(manifiesto.documentos.length, 53, 'deben listarse 53 documentos');
 
     const ids = manifiesto.documentos.map((d) => d.id);
     for (const modulo of MODULOS) {

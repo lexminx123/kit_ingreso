@@ -397,6 +397,31 @@
       ]
     },
     {
+      "id": "recibo_de_pago",
+      "carpeta": "04_PRESTACIONES",
+      "archivo": "Recibo_de_Pago",
+      "docx": "04_PRESTACIONES/Recibo_de_Pago.docx",
+      "pdf": "04_PRESTACIONES/Recibo_de_Pago.pdf",
+      "campos": [
+        "nombre_1",
+        "cedula_1",
+        "cargo_1",
+        "area_departamento_1",
+        "fecha_1",
+        "total_salarial_1",
+        "total_no_salarial_1",
+        "total_pagado_1",
+        "modalidad_del_beneficio_de_alimentacion_1",
+        "monto_del_periodo_1",
+        "observaciones_1",
+        "nombre_2",
+        "cargo_2",
+        "cedula_2",
+        "fecha_2",
+        "fecha_3"
+      ]
+    },
+    {
       "id": "05_epp",
       "carpeta": "05_SEGURIDAD_LABORAL",
       "archivo": "Acta_Entrega_EPP",
@@ -408,6 +433,27 @@
         "cargo_1",
         "area_puesto_de_trabajo_1",
         "fecha_1",
+        "nombre_2",
+        "cargo_2",
+        "cedula_2",
+        "fecha_2",
+        "fecha_3"
+      ]
+    },
+    {
+      "id": "acta_entrega_herramientas_equipos",
+      "carpeta": "05_SEGURIDAD_LABORAL",
+      "archivo": "Acta_Entrega_Herramientas_y_Equipos",
+      "docx": "05_SEGURIDAD_LABORAL/Acta_Entrega_Herramientas_y_Equipos.docx",
+      "pdf": "05_SEGURIDAD_LABORAL/Acta_Entrega_Herramientas_y_Equipos.pdf",
+      "campos": [
+        "nombre_1",
+        "cedula_1",
+        "cargo_1",
+        "area_puesto_de_trabajo_1",
+        "fecha_1",
+        "observaciones_sobre_el_estado_de_entrega_1",
+        "responsable_de_recibir_la_devolucion_1",
         "nombre_2",
         "cargo_2",
         "cedula_2",
@@ -644,6 +690,24 @@
       ]
     },
     {
+      "id": "programa_examenes_medicos_periodicos",
+      "carpeta": "05_SEGURIDAD_LABORAL",
+      "archivo": "Programa_Examenes_Medicos_Periodicos",
+      "docx": "05_SEGURIDAD_LABORAL/Programa_Examenes_Medicos_Periodicos.docx",
+      "pdf": "05_SEGURIDAD_LABORAL/Programa_Examenes_Medicos_Periodicos.pdf",
+      "campos": [
+        "medico_o_servicio_de_salud_ocupacional_1",
+        "fecha_1",
+        "consentimiento_informado_registrado_si_no_1",
+        "fecha_2",
+        "fecha_3",
+        "nombre_1",
+        "cargo_1",
+        "cedula_1",
+        "fecha_4"
+      ]
+    },
+    {
       "id": "05_programa_sst",
       "carpeta": "05_SEGURIDAD_LABORAL",
       "archivo": "Programa_Seguridad_y_Salud_Laboral",
@@ -653,6 +717,59 @@
         "coordinador_a_de_seguridad_y_salud_laboral_1",
         "delegado_s_de_prevencion_1",
         "fecha_1",
+        "fecha_2",
+        "fecha_3",
+        "nombre_1",
+        "cargo_1",
+        "cedula_1",
+        "fecha_4"
+      ]
+    },
+    {
+      "id": "protocolo_emergencias_evacuacion",
+      "carpeta": "05_SEGURIDAD_LABORAL",
+      "archivo": "Protocolo_Emergencias_y_Evacuacion",
+      "docx": "05_SEGURIDAD_LABORAL/Protocolo_Emergencias_y_Evacuacion.docx",
+      "pdf": "05_SEGURIDAD_LABORAL/Protocolo_Emergencias_y_Evacuacion.pdf",
+      "campos": [
+        "coordinador_a_de_emergencias_1",
+        "brigadistas_designados_1",
+        "fecha_1",
+        "salida_principal_1",
+        "salidas_alternas_1",
+        "ruta_de_evacuacion_desde_cocina_y_parrilla_1",
+        "ruta_de_evacuacion_desde_salon_y_caja_1",
+        "punto_de_encuentro_exterior_1",
+        "responsable_del_conteo_de_personal_1",
+        "botiquin_ubicacion_1",
+        "responsable_revision_del_botiquin_1",
+        "fecha_2",
+        "descripcion_del_hecho_1",
+        "personas_lesionadas_1",
+        "medidas_adoptadas_1",
+        "fecha_3",
+        "observaciones_1",
+        "fecha_4",
+        "fecha_5",
+        "nombre_1",
+        "cargo_1",
+        "cedula_1",
+        "fecha_6"
+      ]
+    },
+    {
+      "id": "acta_comite_sst",
+      "carpeta": "06_REGISTROS_LEGALES",
+      "archivo": "Acta_Comite_Seguridad_y_Salud_Laboral",
+      "docx": "06_REGISTROS_LEGALES/Acta_Comite_Seguridad_y_Salud_Laboral.docx",
+      "pdf": "06_REGISTROS_LEGALES/Acta_Comite_Seguridad_y_Salud_Laboral.pdf",
+      "campos": [
+        "lugar_1",
+        "fecha_1",
+        "hora_de_inicio_1",
+        "hora_de_cierre_1",
+        "periodicidad_de_las_reuniones_1",
+        "responsable_de_las_actas_1",
         "fecha_2",
         "fecha_3",
         "nombre_1",
@@ -682,6 +799,28 @@
         "cargo_3",
         "cedula_3",
         "fecha_3"
+      ]
+    },
+    {
+      "id": "constancias_ivss_faov_inces",
+      "carpeta": "06_REGISTROS_LEGALES",
+      "archivo": "Constancias_IVSS_FAOV_INCES",
+      "docx": "06_REGISTROS_LEGALES/Constancias_IVSS_FAOV_INCES.docx",
+      "pdf": "06_REGISTROS_LEGALES/Constancias_IVSS_FAOV_INCES.pdf",
+      "campos": [
+        "nombre_1",
+        "cedula_1",
+        "cargo_1",
+        "area_departamento_1",
+        "fecha_1",
+        "fecha_2",
+        "responsable_de_la_gestion_1",
+        "observaciones_1",
+        "nombre_2",
+        "cargo_2",
+        "cedula_2",
+        "fecha_3",
+        "fecha_4"
       ]
     },
     {
@@ -749,6 +888,30 @@
       ]
     },
     {
+      "id": "consentimiento_descuentos",
+      "carpeta": "07_AUTORIZACIONES",
+      "archivo": "Consentimiento_Descuentos_Autorizados",
+      "docx": "07_AUTORIZACIONES/Consentimiento_Descuentos_Autorizados.docx",
+      "pdf": "07_AUTORIZACIONES/Consentimiento_Descuentos_Autorizados.pdf",
+      "campos": [
+        "nombre_1",
+        "cedula_1",
+        "cargo_1",
+        "area_departamento_1",
+        "fecha_1",
+        "modalidad_del_descuento_fijo_porcentaje_1",
+        "fecha_2",
+        "fecha_3",
+        "descuento_maximo_mensual_aplicable_1",
+        "observaciones_1",
+        "nombre_2",
+        "cargo_2",
+        "cedula_2",
+        "fecha_4",
+        "fecha_5"
+      ]
+    },
+    {
       "id": "codigo_conducta",
       "carpeta": "08_POLITICAS_INTERNAS",
       "archivo": "Codigo_Conducta",
@@ -788,6 +951,30 @@
         "cargo_3",
         "cedula_3",
         "fecha_3"
+      ]
+    },
+    {
+      "id": "politica_acoso_no_discriminacion",
+      "carpeta": "08_POLITICAS_INTERNAS",
+      "archivo": "Politica_Prevencion_Acoso_y_No_Discriminacion",
+      "docx": "08_POLITICAS_INTERNAS/Politica_Prevencion_Acoso_y_No_Discriminacion.docx",
+      "pdf": "08_POLITICAS_INTERNAS/Politica_Prevencion_Acoso_y_No_Discriminacion.pdf",
+      "campos": [
+        "responsable_de_recibir_la_denuncia_1",
+        "correo_o_medio_de_contacto_habilitado_1",
+        "telefono_o_canal_alternativo_1",
+        "fecha_1",
+        "relato_de_los_hechos_1",
+        "fecha_2",
+        "nombre_1",
+        "cedula_1",
+        "cargo_1",
+        "fecha_3",
+        "nombre_2",
+        "cargo_2",
+        "cedula_2",
+        "fecha_4",
+        "fecha_5"
       ]
     },
     {
@@ -833,6 +1020,35 @@
       ]
     },
     {
+      "id": "reglamento_caja_propinas",
+      "carpeta": "08_POLITICAS_INTERNAS",
+      "archivo": "Reglamento_Caja_y_Propinas",
+      "docx": "08_POLITICAS_INTERNAS/Reglamento_Caja_y_Propinas.docx",
+      "pdf": "08_POLITICAS_INTERNAS/Reglamento_Caja_y_Propinas.pdf",
+      "campos": [
+        "responsable_de_la_caja_1",
+        "fondo_fijo_asignado_1",
+        "turno_1",
+        "fecha_1",
+        "hora_de_apertura_1",
+        "monto_de_apertura_1",
+        "hora_de_cierre_1",
+        "monto_de_cierre_1",
+        "observaciones_del_arqueo_1",
+        "criterio_de_reparto_de_propinas_1",
+        "responsable_del_registro_de_propinas_1",
+        "nombre_1",
+        "cedula_1",
+        "cargo_1",
+        "fecha_2",
+        "nombre_2",
+        "cargo_2",
+        "cedula_2",
+        "fecha_3",
+        "fecha_4"
+      ]
+    },
+    {
       "id": "reglamento_interno",
       "carpeta": "08_POLITICAS_INTERNAS",
       "archivo": "Reglamento_Interno_de_Trabajo",
@@ -869,6 +1085,30 @@
         "cedula_2",
         "fecha_2",
         "fecha_3"
+      ]
+    },
+    {
+      "id": "constancia_de_trabajo",
+      "carpeta": "09_CIERRE",
+      "archivo": "Constancia_de_Trabajo",
+      "docx": "09_CIERRE/Constancia_de_Trabajo.docx",
+      "pdf": "09_CIERRE/Constancia_de_Trabajo.pdf",
+      "campos": [
+        "nombre_1",
+        "cedula_1",
+        "cargo_1",
+        "area_departamento_1",
+        "fecha_1",
+        "tipo_de_contrato_1",
+        "descripcion_de_los_servicios_prestados_1",
+        "fecha_2",
+        "motivo_del_egreso_1",
+        "fecha_3",
+        "nombre_2",
+        "cargo_2",
+        "cedula_2",
+        "sello_de_la_empresa_1",
+        "fecha_4"
       ]
     }
   ]

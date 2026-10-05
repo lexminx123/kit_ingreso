@@ -1,0 +1,198 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://kit-ingreso.local/schemas/trabajador.schema.json",
+  "title": "Datos del trabajador (Kit de Ingreso)",
+  "description": "Datos que completa el trabajador. El programa externo de llenado automático valida este documento y mapea cada propiedad al nombre de campo de clientes/<slug>/entregables/_manifest.json indicado en 'x-campo-manifest'.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "nombres",
+    "apellidos",
+    "cedula",
+    "fecha_nacimiento",
+    "nacionalidad",
+    "estado_civil",
+    "cargo",
+    "fecha_ingreso"
+  ],
+  "properties": {
+    "nombres": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Nombres del trabajador.",
+      "x-campo-manifest": "nombre_1"
+    },
+    "apellidos": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Apellidos del trabajador.",
+      "x-campo-manifest": "apellido_1"
+    },
+    "cedula": {
+      "type": "string",
+      "pattern": "^[VE]-?[0-9]{6,9}$",
+      "description": "Cédula de identidad, con prefijo V o E.",
+      "x-campo-manifest": "cedula_1"
+    },
+    "fecha_nacimiento": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de nacimiento en formato AAAA-MM-DD."
+    },
+    "nacionalidad": {
+      "type": "string",
+      "enum": ["Venezolano/a", "Extranjero/a"],
+      "description": "Nacionalidad declarada.",
+      "x-campo-manifest": "nacionalidad_1"
+    },
+    "estado_civil": {
+      "type": "string",
+      "enum": ["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a", "Concubino/a"],
+      "description": "Estado civil."
+    },
+    "sexo": {
+      "type": "string",
+      "enum": ["Femenino", "Masculino", "Otro"],
+      "description": "Sexo o género (opcional)."
+    },
+    "telefono": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Teléfono de contacto."
+    },
+    "correo": {
+      "type": "string",
+      "format": "email",
+      "description": "Correo electrónico."
+    },
+    "domicilio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["estado", "municipio", "parroquia", "direccion"],
+      "properties": {
+        "estado": { "type": "string", "minLength": 1 },
+        "municipio": { "type": "string", "minLength": 1 },
+        "parroquia": { "type": "string", "minLength": 1 },
+        "direccion": { "type": "string", "minLength": 1 },
+        "tiempo_residencia": { "type": "string" }
+      },
+      "description": "Domicilio del trabajador."
+    },
+    "cargo": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Cargo que desempeñará (debe coincidir con un cargo de cliente.json).",
+      "x-campo-manifest": "cargo_1"
+    },
+    "area": {
+      "type": "string",
+      "description": "Área o departamento del cargo.",
+      "x-campo-manifest": "area_1"
+    },
+    "fecha_ingreso": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de ingreso en formato AAAA-MM-DD.",
+      "x-campo-manifest": "fecha_1"
+    },
+    "contactos_emergencia": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Contactos a avisar en caso de emergencia.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["nombre", "parentesco", "telefono"],
+        "properties": {
+          "nombre": { "type": "string", "minLength": 1 },
+          "parentesco": { "type": "string", "minLength": 1 },
+          "telefono": { "type": "string", "minLength": 1 },
+          "direccion": { "type": "string" }
+        }
+      }
+    },
+    "datos_bancarios": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["banco", "tipo_cuenta", "numero_cuenta", "titular"],
+      "properties": {
+        "banco": { "type": "string", "minLength": 1 },
+        "tipo_cuenta": { "type": "string", "enum": ["Ahorro", "Corriente"] },
+        "numero_cuenta": { "type": "string", "minLength": 1 },
+        "titular": { "type": "string", "minLength": 1 }
+      },
+      "description": "Datos para el pago de nómina y fideicomiso."
+    },
+    "beneficiarios": {
+      "type": "array",
+      "description": "Beneficiarios de prestaciones sociales. La suma de porcentajes no debe exceder 100.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["nombre", "cedula", "parentesco", "porcentaje"],
+        "properties": {
+          "nombre": { "type": "string", "minLength": 1 },
+          "cedula": { "type": "string", "pattern": "^[VE]-?[0-9]{6,9}$" },
+          "parentesco": { "type": "string", "minLength": 1 },
+          "porcentaje": { "type": "number", "minimum": 0, "maximum": 100 }
+        }
+      }
+    },
+    "instruccion": {
+      "type": "array",
+      "description": "Nivel educativo alcanzado.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["nivel"],
+        "properties": {
+          "nivel": { "type": "string", "minLength": 1 },
+          "institucion": { "type": "string" },
+          "titulo": { "type": "string" },
+          "anio": { "type": "string" }
+        }
+      }
+    },
+    "experiencia_laboral": {
+      "type": "array",
+      "description": "Experiencia laboral previa.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["empresa", "cargo"],
+        "properties": {
+          "empresa": { "type": "string", "minLength": 1 },
+          "cargo": { "type": "string", "minLength": 1 },
+          "desde": { "type": "string" },
+          "hasta": { "type": "string" },
+          "motivo_retiro": { "type": "string" }
+        }
+      }
+    },
+    "referencias_personales": {
+      "type": "array",
+      "description": "Referencias personales.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["nombre", "relacion", "telefono"],
+        "properties": {
+          "nombre": { "type": "string", "minLength": 1 },
+          "relacion": { "type": "string", "minLength": 1 },
+          "telefono": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "salud": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "padece_condicion": { "type": "boolean" },
+        "detalle": { "type": "string" },
+        "tratamiento_actual": { "type": "string" },
+        "alergias": { "type": "string" }
+      },
+      "description": "Información de salud declarada (dato sensible, uso reservado)."
+    }
+  }
+}

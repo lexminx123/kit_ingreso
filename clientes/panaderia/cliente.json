@@ -1,0 +1,293 @@
+{
+  "slug": "panaderia",
+  "marca": "PANADERÍA",
+  "empresa": "[COMPLETAR: razón social]",
+  "rif": "[COMPLETAR]",
+  "domicilio": "[COMPLETAR]",
+  "domicilio_completo": "[COMPLETAR: dirección fiscal exacta]",
+  "representante": {
+    "nombre": "[COMPLETAR]",
+    "ci": "[COMPLETAR]",
+    "cargo": "[COMPLETAR]"
+  },
+  "actividad": "Panadería, pastelería y venta de panes y derivados",
+  "remuneracion": {
+    "total_usd": 240,
+    "periodicidad": "mensual",
+    "esquema": [
+      {
+        "concepto": "Salario Base",
+        "usd": 40,
+        "caracter": "SALARIAL",
+        "quincenal": 20
+      },
+      {
+        "concepto": "Bono de Alimentación (Cestaticket)",
+        "usd": 80,
+        "caracter": "SALARIAL",
+        "quincenal": 40
+      },
+      {
+        "concepto": "Bono de Buen Vivir",
+        "usd": 40,
+        "caracter": "NO SALARIAL",
+        "quincenal": 20
+      },
+      {
+        "concepto": "Bono de Transporte",
+        "usd": 40,
+        "caracter": "NO SALARIAL",
+        "quincenal": 20
+      },
+      {
+        "concepto": "Otros beneficios no salariales",
+        "usd": 40,
+        "caracter": "NO SALARIAL",
+        "quincenal": 20
+      }
+    ],
+    "base_prestaciones_usd": 120
+  },
+  "jornada": {
+    "tipo": "diurna",
+    "horas_diarias": 8,
+    "horas_semanales": 40,
+    "detalle": "[COMPLETAR: horario y días de descanso]"
+  },
+  "cargos": [
+    {
+      "id": "encargado",
+      "nombre": "ENCARGADO",
+      "area": "admin",
+      "sueldo_base_usd": 50,
+      "funciones": [
+        "Supervisar la operación diaria de la panadería en todas sus áreas.",
+        "Planificar la producción diaria de panes, pasteles y demás productos según la demanda.",
+        "Controlar el inventario de materia prima (harinas, azúcar, levaduras y grasas) y solicitar las compras.",
+        "Verificar la calidad, el peso y la presentación de los productos antes de su venta.",
+        "Coordinar y asignar tareas al personal de producción, atención y caja.",
+        "Supervisar el cumplimiento de las normas de higiene, seguridad y manipulación de alimentos.",
+        "Controlar la caja, los ingresos y los gastos del turno, y elaborar el reporte diario.",
+        "Atender los reclamos de los clientes y resolver las incidencias de la operación.",
+        "Verificar el funcionamiento y la limpieza de hornos, amasadoras y equipos.",
+        "Reportar a la representación legal los resultados, incidencias y necesidades del negocio."
+      ]
+    },
+    {
+      "id": "encargada",
+      "nombre": "ENCARGADA",
+      "area": "admin",
+      "sueldo_base_usd": 50,
+      "funciones": [
+        "Supervisar el salón, la atención al público y la exhibición de los productos.",
+        "Coordinar los turnos del personal de atención, caja y limpieza.",
+        "Verificar la presentación, el uniforme y el trato del personal con los clientes.",
+        "Controlar la reposición y el orden de las vitrinas y exhibidores de la panadería.",
+        "Atender y resolver las quejas y sugerencias de los clientes.",
+        "Apoyar el cierre de caja y el cuadre diario del turno.",
+        "Supervisar el cumplimiento de las normas de higiene y manipulación de alimentos.",
+        "Elaborar y enviar los pedidos de producción diarios al área de panadería.",
+        "Verificar los precios, el etiquetado y la fecha de vencimiento de los productos exhibidos.",
+        "Reportar al encargado general las incidencias del salón y de la atención."
+      ]
+    },
+    {
+      "id": "maestro",
+      "nombre": "MAESTRO",
+      "area": "panaderia",
+      "sueldo_base_usd": 50,
+      "funciones": [
+        "Elaborar las masas de pan según las recetas y formulaciones de la empresa.",
+        "Dosificar y pesar harinas, agua, levadura, sal, azúcar y demás ingredientes.",
+        "Amasar, sobarbar y dar forma a los distintos panes y productos de la línea.",
+        "Controlar el proceso de fermentación y la temperatura de las masas.",
+        "Coordinar el horneado y verificar el punto y la calidad de cada producto.",
+        "Diseñar y probar nuevas recetas y productos de panadería.",
+        "Supervisar y enseñar a los oficiales y ayudantes de panadería.",
+        "Mantener la limpieza, el orden y las condiciones sanitarias del área de masas.",
+        "Controlar el rendimiento de la materia prima y reducir el desperdicio.",
+        "Reportar al encargado las necesidades de insumos y las fallas de los equipos."
+      ]
+    },
+    {
+      "id": "oficial_panadero",
+      "nombre": "OFICIAL PANADERO",
+      "area": "panaderia",
+      "sueldo_base_usd": 50,
+      "funciones": [
+        "Preparar y dosificar los ingredientes para las distintas masas de pan.",
+        "Amasar y dividir la masa en porciones según el producto a elaborar.",
+        "Formar y colocar los panes en las latas o bandejas de horneado.",
+        "Vigilar el proceso de fermentación y avisar cuando la masa esté lista.",
+        "Hornear los panes y retirarlos en el punto indicado por el maestro.",
+        "Aplicar brillos, semillas y acabados a los panes según la receta.",
+        "Mantener limpios los mesones, amasadoras, latas y herramientas de trabajo.",
+        "Rotular y almacenar el producto terminado conforme a la rotación.",
+        "Cumplir las normas de higiene y manipulación de alimentos.",
+        "Reportar al maestro las anomalías en insumos, masas o equipos."
+      ]
+    },
+    {
+      "id": "hornero",
+      "nombre": "HORNERO",
+      "area": "horno",
+      "sueldo_base_usd": 50,
+      "funciones": [
+        "Encender, regular y vigilar los hornos según la temperatura requerida por cada producto.",
+        "Cargar y descargar los hornos con las bandejas y latas de producto.",
+        "Controlar el tiempo y la temperatura de cocción para asegurar un horneado uniforme.",
+        "Retirar los productos horneados y verificar color, punto y calidad.",
+        "Limpiar y mantener los hornos, resistencias, piedras y cámaras de combustión.",
+        "Detectar fugas de gas, fallas eléctricas o anomalías en los quemadores y reportarlas.",
+        "Mantener el área del horno limpia, ventilada y libre de material inflamable.",
+        "Usar los guantes térmicos y el equipo de protección personal correspondiente.",
+        "Coordinar con el maestro el orden y los tiempos de horneado de la producción.",
+        "Registrar los lotes horneados y el consumo de materia prima."
+      ]
+    },
+    {
+      "id": "pizzero",
+      "nombre": "PIZZERO",
+      "area": "horno",
+      "sueldo_base_usd": 50,
+      "funciones": [
+        "Preparar las masas y los ingredientes para la elaboración de pizzas y productos afines.",
+        "Estirar y formar las bases de pizza con el grosor y tamaño establecido.",
+        "Colocar los toppings y porcionar los ingredientes según la receta.",
+        "Hornear las pizzas controlando tiempo y temperatura para lograr el punto deseado.",
+        "Mantener limpios el área de preparación, los utensilios y el horno de pizzas.",
+        "Recibir, conservar y rotar los ingredientes conforme a la cadena de frío.",
+        "Controlar el inventario de insumos de la línea de pizzas.",
+        "Atender los pedidos de pizza con rapidez y buena presentación.",
+        "Cumplir las normas de higiene y manipulación de alimentos.",
+        "Reportar al encargado los faltantes, daños o productos en mal estado."
+      ]
+    },
+    {
+      "id": "mesera",
+      "nombre": "MESERA",
+      "area": "salon",
+      "sueldo_base_usd": 50,
+      "funciones": [
+        "Atender a los clientes en el salón y tomar las órdenes de consumo.",
+        "Servir el pan, los productos de pastelería y las bebidas solicitadas.",
+        "Registrar y transmitir los pedidos a cocina, barra o caja según corresponda.",
+        "Mantener limpias y ordenadas las mesas, sillas y el área del salón.",
+        "Reponer el servicio de mesa (pan, agua y servilletas) durante la estadía del cliente.",
+        "Presentar la cuenta y acompañar al cliente en el proceso de pago.",
+        "Atender consultas sobre productos, precios y promociones.",
+        "Reportar quejas, incidentes o faltantes al encargado del salón.",
+        "Cumplir las normas de higiene, presentación y trato al público.",
+        "Realizar el montaje y desmontaje del salón antes y después del servicio."
+      ]
+    },
+    {
+      "id": "cocinera",
+      "nombre": "COCINERA",
+      "area": "cocina",
+      "sueldo_base_usd": 50,
+      "funciones": [
+        "Preparar los alimentos y platos de la carta conforme a las recetas establecidas.",
+        "Cocinar, freír y emplatar los pedidos en los tiempos de servicio.",
+        "Recibir, clasificar y conservar los insumos conforme a la cadena de frío.",
+        "Controlar las porciones y evitar el desperdicio de materia prima.",
+        "Mantener limpios y en buen estado el área, los utensilios y los equipos de cocina.",
+        "Cumplir las normas de higiene y manipulación de alimentos durante todo el proceso.",
+        "Operar la freidora, la plancha y demás equipos con las medidas de seguridad.",
+        "Reportar al encargado los faltantes, daños o productos en mal estado.",
+        "Rotular y almacenar los alimentos preparados conforme a la rotación.",
+        "Realizar la limpieza profunda de la cocina al cierre del turno."
+      ]
+    },
+    {
+      "id": "mantenimiento",
+      "nombre": "MANTENIMIENTO",
+      "area": "mantenimiento",
+      "sueldo_base_usd": 50,
+      "funciones": [
+        "Ejecutar el mantenimiento preventivo y correctivo de los equipos e instalaciones.",
+        "Revisar y reparar hornos, amasadoras, batidoras, neveras y sistemas eléctricos.",
+        "Realizar instalaciones y reparaciones eléctricas, hidráulicas y de gas sencillas.",
+        "Detectar y corregir fugas de agua, gas o fallas mecánicas en los equipos.",
+        "Mantener el orden, la limpieza y la seguridad de los cuartos de máquinas y depósitos.",
+        "Manipular herramientas, químicos y repuestos con las medidas de seguridad.",
+        "Reportar las fallas que requieran proveedores o repuestos especializados.",
+        "Verificar el estado de los extintores, luces de emergencia y rutas de evacuación.",
+        "Cumplir las normas de seguridad laboral y usar el equipo de protección personal.",
+        "Llevar el registro de las actividades de mantenimiento realizadas."
+      ]
+    },
+    {
+      "id": "ayudante_pastelero",
+      "nombre": "AYUDANTE PASTELERO",
+      "area": "pasteleria",
+      "sueldo_base_usd": 50,
+      "funciones": [
+        "Apoyar la elaboración de tortas, postres y productos de pastelería.",
+        "Pesar y preparar los ingredientes según las recetas del pastelero.",
+        "Batir, mezclar y preparar cremas, rellenos y coberturas básicas.",
+        "Hornear y retirar los productos de pastelería en el punto indicado.",
+        "Mantener limpios los mesones, batidoras, mangas y utensilios de pastelería.",
+        "Ordenar y refrigerar los productos terminados conforme a la rotación.",
+        "Apoyar el montaje y la decoración de tortas y postres.",
+        "Cumplir las normas de higiene y manipulación de alimentos.",
+        "Reportar al pastelero la falta de insumos o las fallas de los equipos.",
+        "Realizar el aseo de su área al final de la jornada."
+      ]
+    },
+    {
+      "id": "pastelero",
+      "nombre": "PASTELERO",
+      "area": "pasteleria",
+      "sueldo_base_usd": 50,
+      "funciones": [
+        "Elaborar tortas, postres, cremas y productos de pastelería según las recetas de la empresa.",
+        "Decorar y montar los productos de pastelería con acabados de calidad.",
+        "Preparar masas, bizcochos, rellenos y coberturas propias de la pastelería.",
+        "Controlar la temperatura de hornos, cámaras y equipos de pastelería.",
+        "Diseñar y probar nuevos productos y presentaciones de pastelería.",
+        "Supervisar y orientar al ayudante de pastelería.",
+        "Controlar el inventario y el uso racional de los insumos de pastelería.",
+        "Mantener la limpieza, el orden y las condiciones sanitarias del área.",
+        "Cumplir las normas de higiene y manipulación de alimentos.",
+        "Reportar al encargado las necesidades de insumos y las fallas de los equipos."
+      ]
+    },
+    {
+      "id": "barra",
+      "nombre": "BARRA",
+      "area": "barra",
+      "sueldo_base_usd": 50,
+      "funciones": [
+        "Preparar y servir bebidas, jugos, café y demás productos de la barra.",
+        "Atender los pedidos de barra con rapidez, calidad y buena presentación.",
+        "Mantener la barra limpia, ordenada y con los equipos en buen estado.",
+        "Controlar el inventario, las existencias y el uso racional de los insumos de barra.",
+        "Verificar el estado y la fecha de vencimiento de los productos de barra.",
+        "Operar la máquina de café, licuadoras y demás equipos con las medidas de seguridad.",
+        "Reponer hielo, vasos, insumos y utensilios durante el servicio.",
+        "Cumplir las normas de higiene y manipulación de alimentos y bebidas.",
+        "Reportar al encargado los faltantes, daños o consumos irregulares.",
+        "Realizar el cierre y la limpieza de la barra al final del turno."
+      ]
+    },
+    {
+      "id": "cajera",
+      "nombre": "CAJERA",
+      "area": "caja",
+      "sueldo_base_usd": 50,
+      "funciones": [
+        "Cobrar y facturar los productos adquiridos por los clientes conforme a los precios vigentes.",
+        "Recibir y procesar los medios de pago autorizados y entregar los comprobantes.",
+        "Manejar la caja registradora, el fondo fijo y los documentos del turno.",
+        "Efectuar el arqueo y el cuadre de caja al cierre de cada turno y reportar las diferencias.",
+        "Atender al público con cortesía y resolver las consultas de facturación.",
+        "Entregar los pedidos de mostrador y verificar que correspondan a la factura.",
+        "Mantener limpio y ordenado el puesto de caja con sus insumos.",
+        "Reportar al encargado los faltantes, irregularidades o intentos de fraude.",
+        "Cumplir las normas de higiene y presentación del personal.",
+        "Colaborar en la reposición y el orden de los productos de la vitrina cuando corresponda."
+      ]
+    }
+  ]
+}

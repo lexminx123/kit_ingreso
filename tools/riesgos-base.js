@@ -276,6 +276,262 @@ const RIESGOS_POR_AREA = {
       medidas: 'Levantar con las piernas; usar carro o pedir apoyo; no cargar en exceso.',
     },
   ],
+  // --- Áreas de panadería (retrocompatible: no alteran las de icabaru) ------
+  horno: [
+    {
+      riesgo: 'Quemaduras por contacto con hornos, bandejas y resistencias calientes',
+      p: 3,
+      c: 3,
+      medidas:
+        'Usar guantes térmicos y pinzas largas; no tocar superficies calientes; abrir el horno con cuidado.',
+    },
+    {
+      riesgo: 'Exposición a calor radiante y temperaturas elevadas',
+      p: 3,
+      c: 2,
+      medidas: 'Ventilar y extraer el calor; hidratarse; programar pausas y rotar tareas.',
+    },
+    {
+      riesgo: 'Contacto o fuga de gas en los quemadores',
+      p: 1,
+      c: 3,
+      medidas:
+        'Verificar mangueras, conexiones y llaves; ventilar; no encender llama ante olor a gas; extintor a la mano.',
+    },
+    {
+      riesgo: 'Atrapamiento o golpes con las puertas y bandejas del horno',
+      p: 2,
+      c: 2,
+      medidas: 'Usar bandejas adecuadas; mantener el orden; usar guantes y calzado de seguridad.',
+    },
+    {
+      riesgo: 'Posturas forzadas al cargar y descargar las bandejas',
+      p: 2,
+      c: 2,
+      medidas: 'Ajustar la altura de trabajo; usar carros; técnica de levantamiento con las piernas.',
+    },
+    {
+      riesgo: 'Quemaduras por vapor al abrir el horno o limpiarlo',
+      p: 2,
+      c: 2,
+      medidas: 'Abrir despacio; usar guantes y delantal térmico; alejar el rostro.',
+    },
+  ],
+  panaderia: [
+    {
+      riesgo: 'Exposición a harina en polvo y polvo de masa',
+      p: 3,
+      c: 1,
+      medidas: 'Usar mascarilla; aspirar el polvo; mantener ventilación y limpieza.',
+    },
+    {
+      riesgo: 'Atrapamiento de manos en la amasadora y la sobadora',
+      p: 2,
+      c: 3,
+      medidas:
+        'Usar el resguardo de la máquina; detenerla antes de intervenir; no meter las manos en marcha.',
+    },
+    {
+      riesgo: 'Cortes con cuchillas, rasquetas y cuchillos',
+      p: 3,
+      c: 2,
+      medidas: 'Usar guantes anticorte; técnica correcta de corte; guardar los filos en soporte.',
+    },
+    {
+      riesgo: 'Esfuerzo físico por el amasado y la manipulación de sacos de harina',
+      p: 3,
+      c: 2,
+      medidas: 'Técnica de levantamiento; ayudas mecánicas; no cargar en exceso.',
+    },
+    {
+      riesgo: 'Lesiones musculoesqueléticas por movimientos repetitivos',
+      p: 3,
+      c: 2,
+      medidas: 'Pausas activas; rotación de tareas; ajustar la altura del mesón.',
+    },
+    {
+      riesgo: 'Resbalones por harina y agua derramadas en el piso',
+      p: 3,
+      c: 2,
+      medidas: 'Limpiar de inmediato; usar calzado antideslizante; señalizar la zona.',
+    },
+    {
+      riesgo: 'Contacto con químicos de limpieza de equipos',
+      p: 2,
+      c: 2,
+      medidas: 'Diluir según indicación; usar guantes; nunca mezclar cloro con amoníaco.',
+    },
+  ],
+  pasteleria: [
+    {
+      riesgo: 'Cortes con cuchillos, espátulas y cortadores',
+      p: 3,
+      c: 2,
+      medidas: 'Usar guantes anticorte; cuchillos afilados; técnica correcta de corte.',
+    },
+    {
+      riesgo: 'Quemaduras por hornos, caramelo y azúcar caliente',
+      p: 3,
+      c: 3,
+      medidas: 'Usar guantes térmicos; manipular el caramelo con cuidado; alejar el rostro.',
+    },
+    {
+      riesgo: 'Atrapamiento en batidoras y amasadoras de pastelería',
+      p: 2,
+      c: 3,
+      medidas: 'Usar el resguardo; detener la máquina antes de intervenir.',
+    },
+    {
+      riesgo: 'Exposición a harina, azúcar glass y colorantes en polvo',
+      p: 2,
+      c: 1,
+      medidas: 'Usar mascarilla; ventilar; realizar limpieza húmeda.',
+    },
+    {
+      riesgo: 'Esfuerzo por el uso repetido de mangas pasteleras',
+      p: 3,
+      c: 2,
+      medidas: 'Alternar manos; programar pausas; elegir mangas de tamaño adecuado.',
+    },
+    {
+      riesgo: 'Resbalones por cremas, grasas y líquidos derramados',
+      p: 3,
+      c: 2,
+      medidas: 'Limpiar de inmediato; usar calzado antideslizante.',
+    },
+    {
+      riesgo: 'Contacto con esencias y colorantes que irritan la piel',
+      p: 2,
+      c: 1,
+      medidas: 'Usar guantes; ventilar; evitar el contacto con los ojos.',
+    },
+  ],
+  salon_barra: [
+    {
+      riesgo: 'Manipulación manual de cargas (bandejas, cajas y botellas)',
+      p: 3,
+      c: 2,
+      medidas: 'Distribuir el peso; usar ayudas de transporte; no sobrecargar.',
+    },
+    {
+      riesgo: 'Resbalones por derrames de líquidos y pisos húmedos',
+      p: 3,
+      c: 2,
+      medidas: 'Limpiar de inmediato; usar calzado antideslizante; señalizar la zona.',
+    },
+    {
+      riesgo: 'Cortes con cristalería y vidrio roto',
+      p: 2,
+      c: 2,
+      medidas: 'Usar guantes de manejo; recoger el vidrio con utensilios.',
+    },
+    {
+      riesgo: 'Quemaduras con café, agua caliente y vapor',
+      p: 2,
+      c: 2,
+      medidas: 'Manipular con cuidado; usar pinzas; no llenar en exceso.',
+    },
+    {
+      riesgo: 'Golpes y caídas por traslados con bandejas en el salón',
+      p: 2,
+      c: 2,
+      medidas: 'Despejar las rutas; usar calzado antideslizante; no correr.',
+    },
+    {
+      riesgo: 'Estrés por trato con público y horas pico',
+      p: 3,
+      c: 2,
+      medidas: 'Programar pausas; rotar tareas; aplicar el protocolo de atención.',
+    },
+    {
+      riesgo: 'Agresión verbal o física de clientes',
+      p: 2,
+      c: 2,
+      medidas: 'Seguir el protocolo de atención; pedir apoyo del encargado; no confrontar solo.',
+    },
+  ],
+  mantenimiento: [
+    {
+      riesgo: 'Descarga eléctrica por contacto con instalaciones y equipos energizados',
+      p: 2,
+      c: 3,
+      medidas: 'Bloquear y desenergizar; usar herramientas aisladas; no trabajar solo.',
+    },
+    {
+      riesgo: 'Contacto con químicos de limpieza y mantenimiento',
+      p: 2,
+      c: 3,
+      medidas: 'Usar guantes, gafas y mascarilla; ventilar; leer las fichas de seguridad.',
+    },
+    {
+      riesgo: 'Atrapamiento o golpes por fallas mecánicas y partes móviles',
+      p: 2,
+      c: 3,
+      medidas: 'Bloquear la máquina; usar resguardos; seguir el procedimiento de trabajo.',
+    },
+    {
+      riesgo: 'Cortes con herramientas manuales y rebabas metálicas',
+      p: 3,
+      c: 2,
+      medidas: 'Usar guantes; mantener las herramientas en buen estado; técnica segura.',
+    },
+    {
+      riesgo: 'Caídas desde escaleras al reparar equipos en altura',
+      p: 2,
+      c: 3,
+      medidas: 'Usar escalera estable; no subir solo; arnés cuando aplique.',
+    },
+    {
+      riesgo: 'Quemaduras por partes calientes de hornos y tuberías',
+      p: 3,
+      c: 2,
+      medidas: 'Esperar el enfriamiento; usar guantes térmicos; señalizar la zona.',
+    },
+    {
+      riesgo: 'Exposición a fugas de gas al intervenir quemadores',
+      p: 1,
+      c: 3,
+      medidas: 'Cerrar la llave; ventilar; verificar con agua jabonosa; no encender llama.',
+    },
+  ],
+  encargado: [
+    {
+      riesgo: 'Estrés por la responsabilidad de la operación y el personal',
+      p: 3,
+      c: 2,
+      medidas: 'Planificar; delegar; programar pausas; brindar apoyo al personal.',
+    },
+    {
+      riesgo: 'Posturas prolongadas y ergonomía de oficina',
+      p: 3,
+      c: 1,
+      medidas: 'Ajustar silla y escritorio; pausas activas; apoyo lumbar.',
+    },
+    {
+      riesgo: 'Fatiga visual por computadoras',
+      p: 2,
+      c: 1,
+      medidas: 'Iluminación adecuada; pausas visuales; ajustar brillo y distancia del monitor.',
+    },
+    {
+      riesgo: 'Violencia o robo en el establecimiento',
+      p: 2,
+      c: 3,
+      medidas: 'Protocolo de seguridad; cámaras; manejo discreto del efectivo; capacitar al personal.',
+    },
+    {
+      riesgo: 'Resbalones o caídas al recorrer el local',
+      p: 2,
+      c: 1,
+      medidas: 'Usar calzado antideslizante; señalizar y limpiar los derrames.',
+    },
+    {
+      riesgo: 'Sobrecarga por turnos largos y doble función',
+      p: 3,
+      c: 2,
+      medidas: 'Programar turnos; respetar los descansos; distribuir las tareas.',
+    },
+  ],
   supervisor_admin: [
     {
       riesgo: 'Estrés por responsabilidad y turnos',
@@ -340,6 +596,39 @@ const EPP_POR_AREA = {
     'Mascarilla para humo',
   ],
   supervisor_admin: ['Gorra', 'Delantal', 'Calzado antideslizante', 'Gel antibacterial'],
+  // Panadería
+  horno: [
+    'Guantes térmicos',
+    'Delantal resistente al calor',
+    'Calzado antideslizante',
+    'Gorra o red para el cabello',
+    'Mascarilla',
+  ],
+  panaderia: [
+    'Mascarilla para harina',
+    'Guantes anticorte',
+    'Gorra o red para el cabello',
+    'Calzado antideslizante',
+    'Delantal',
+  ],
+  pasteleria: [
+    'Guantes anticorte',
+    'Guantes térmicos',
+    'Gorra o red para el cabello',
+    'Mascarilla',
+    'Calzado antideslizante',
+    'Delantal',
+  ],
+  salon_barra: ['Calzado antideslizante', 'Delantal', 'Gorra', 'Guantes de manejo'],
+  mantenimiento: [
+    'Guantes de seguridad',
+    'Guantes dieléctricos',
+    'Gafas de protección',
+    'Mascarilla',
+    'Calzado de seguridad',
+    'Casco',
+  ],
+  encargado: ['Gorra', 'Delantal', 'Calzado antideslizante', 'Gel antibacterial'],
 };
 
 // --- Metadatos de cada área/rol ---------------------------------------------
@@ -355,6 +644,13 @@ const AREAS = {
     titulo: 'SUPERVISOR / ADMINISTRACIÓN',
     cargo: 'SUPERVISOR DE SALÓN / ADMINISTRACIÓN',
   },
+  // Panadería
+  horno: { titulo: 'HORNO', cargo: 'HORNERO / PIZZERO' },
+  panaderia: { titulo: 'AMASADO Y PANADERÍA', cargo: 'MAESTRO / OFICIAL PANADERO' },
+  pasteleria: { titulo: 'PASTELERÍA', cargo: 'PASTELERO / AYUDANTE PASTELERO' },
+  salon_barra: { titulo: 'SALÓN Y BARRA', cargo: 'MESERA / BARRA' },
+  mantenimiento: { titulo: 'MANTENIMIENTO', cargo: 'MANTENIMIENTO' },
+  encargado: { titulo: 'ENCARGADO / ADMINISTRACIÓN', cargo: 'ENCARGADO / ENCARGADA' },
 };
 
 // --- Utilidades -------------------------------------------------------------

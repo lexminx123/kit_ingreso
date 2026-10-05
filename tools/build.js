@@ -103,17 +103,22 @@ function descubrirModulos(baseClientes = CLIENTES) {
  */
 function trabajos(rootDir = ROOT) {
   const lista = [];
+  // La clave de unicidad es por cliente: cada cliente puede tener un documento
+  // con el mismo `id` (p. ej. "05_cartilla") sin colisionar con los demás.
+  const clave = (slug, id) => `${slug}:${id}`;
   const vistos = new Set();
 
   for (const modulo of descubrirModulos(path.join(rootDir, 'clientes'))) {
-    if (vistos.has(modulo.id)) continue;
-    vistos.add(modulo.id);
+    const k = clave(modulo.slug, modulo.id);
+    if (vistos.has(k)) continue;
+    vistos.add(k);
     lista.push({ ...modulo, legacy: false });
   }
 
   for (const [id, doc] of Object.entries(DOCS)) {
-    if (vistos.has(id)) continue;
-    vistos.add(id);
+    const k = clave(doc.slug, id);
+    if (vistos.has(k)) continue;
+    vistos.add(k);
     lista.push({
       id,
       slug: doc.slug,

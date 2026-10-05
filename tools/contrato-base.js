@@ -97,6 +97,12 @@ const FUNCIONES_POR_AREA = {
 };
 
 function funcionesDeCargo(cargo) {
+  // Data-driven: si el cliente declara las funciones del cargo en cliente.json,
+  // se usan esas. Si no (compatibilidad con icabaru), se conserva la lógica por
+  // id/área de restaurante.
+  if (cargo && Array.isArray(cargo.funciones) && cargo.funciones.length) {
+    return cargo.funciones;
+  }
   return FUNCIONES[cargo.id] || FUNCIONES_POR_AREA[cargo.area] || FUNCIONES.administrador;
 }
 

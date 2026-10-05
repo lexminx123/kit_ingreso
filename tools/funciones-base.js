@@ -10,7 +10,8 @@
 
 const b = require('./blocks.js');
 
-// Etiqueta legible del área gastronómica.
+// Etiqueta legible del área. Incluye las áreas gastronómicas (icabaru) y las
+// de panadería; cualquier área desconocida cae al propio identificador.
 const ETIQUETA_AREA = {
   cocina: 'Cocina',
   parrilla: 'Parrilla',
@@ -18,6 +19,11 @@ const ETIQUETA_AREA = {
   caja: 'Caja',
   barra: 'Barra',
   administracion: 'Administración',
+  admin: 'Administración',
+  panaderia: 'Panadería',
+  pasteleria: 'Pastelería',
+  horno: 'Horno',
+  mantenimiento: 'Mantenimiento',
 };
 
 /** Área legible a partir de la clave de área del cargo. */
@@ -101,9 +107,17 @@ function descripcionFunciones(cargo, contenido, opciones = {}) {
     bloques.push(b.p(contenido.proposito));
   }
 
-  if (contenido.funciones && contenido.funciones.length) {
+  // Data-driven: si el contenido no trae funciones, se usan las declaradas en
+  // cliente.json para el cargo. Así icabaru (que las pasa en `contenido`)
+  // conserva su salida y panadería las toma de una única fuente de verdad.
+  const funciones =
+    contenido.funciones && contenido.funciones.length
+      ? contenido.funciones
+      : cargo.funciones || [];
+
+  if (funciones.length) {
     bloques.push(b.chapter('2. Funciones principales'));
-    for (const fn of contenido.funciones) bloques.push(b.numbered(fn));
+    for (const fn of funciones) bloques.push(b.numbered(fn));
   }
 
   if (contenido.responsabilidades && contenido.responsabilidades.length) {

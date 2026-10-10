@@ -1,0 +1,73 @@
+{
+  "nombres": "María Alejandra",
+  "apellidos": "Pérez Rondón",
+  "cedula": "V-18456321",
+  "fecha_nacimiento": "1994-05-12",
+  "nacionalidad": "Venezolano/a",
+  "estado_civil": "Soltero/a",
+  "sexo": "Femenino",
+  "telefono": "+58 412-1234567",
+  "correo": "maria.perez@example.com",
+  "domicilio": {
+    "estado": "Miranda",
+    "municipio": "Guaicaipuro",
+    "parroquia": "Los Teques",
+    "direccion": "Av. Bolívar, Res. Los Pinos, Torre B, Apto 4-C",
+    "tiempo_residencia": "5 años"
+  },
+  "cargo": "MESONERO / ATENDEDOR",
+  "area": "salon",
+  "fecha_ingreso": "2026-02-01",
+  "contactos_emergencia": [
+    {
+      "nombre": "José Pérez",
+      "parentesco": "Padre",
+      "telefono": "+58 414-7654321",
+      "direccion": "Av. Bolívar, Res. Los Pinos, Torre B, Apto 4-C"
+    }
+  ],
+  "datos_bancarios": {
+    "banco": "Banco de Venezuela",
+    "tipo_cuenta": "Ahorro",
+    "numero_cuenta": "0102-0123-45-6789012345",
+    "titular": "María Alejandra Pérez Rondón"
+  },
+  "beneficiarios": [
+    {
+      "nombre": "José Pérez",
+      "cedula": "V-12345678",
+      "parentesco": "Padre",
+      "porcentaje": 100
+    }
+  ],
+  "instruccion": [
+    {
+      "nivel": "Secundaria",
+      "institucion": "U.E. Liceo Los Teques",
+      "titulo": "Bachiller en Ciencias",
+      "anio": "2011"
+    }
+  ],
+  "experiencia_laboral": [
+    {
+      "empresa": "Restaurante El Fogón",
+      "cargo": "Mesonero",
+      "desde": "2020-01",
+      "hasta": "2025-12",
+      "motivo_retiro": "Mejora laboral"
+    }
+  ],
+  "referencias_personales": [
+    {
+      "nombre": "Luis Gómez",
+      "relacion": "Ex supervisor",
+      "telefono": "+58 416-5551122"
+    }
+  ],
+  "salud": {
+    "padece_condicion": false,
+    "detalle": "",
+    "tratamiento_actual": "",
+    "alergias": ""
+  }
+}
